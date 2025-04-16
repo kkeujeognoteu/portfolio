@@ -108,7 +108,7 @@
 .portfolio .portTitle p{ font-size:220px; line-height:0.9; }
 .portfolio .portTitle .portA{ font-family:'Public Sans', sans-serif }
 .portfolio .portTitle .portB{ font-family:'Cormorant Infant', serif }
-.portfolio .portC{ display:flex; z-index:2; margin-top:0; text-align:center; transform:translateX(-50%); }
+.portfolio .portC{ display:flex; z-index:2; margin-top:18%; text-align:center; transform:translateX(-50%); }
 
 .portfolio .portBox{ width:100%; margin:0 auto; }
 .portfolio .portBox ul{ display:flex; flex-wrap:wrap; justify-content: space-between; }
