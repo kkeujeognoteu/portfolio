@@ -73,7 +73,7 @@
 }
 
 /* circleBox */
-.circleBox{ position:relative; height:400px; overflow:hidden; }
+.circleBox{ position:relative; height:490px; overflow:hidden; }
 .circleBox .circle{ display:block; width:2500px; height:2500px; border-radius:50%; background:#fff; position:absolute; top:20%; left:50%; transform:translateX(-50%); }
 
 /* works */
