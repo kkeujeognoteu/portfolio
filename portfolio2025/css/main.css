@@ -113,10 +113,10 @@
 
 .portfolio .portBox{ width:100%; margin:0 auto; }
 .portfolio .portBox ul{ display:flex; flex-wrap:wrap; justify-content: space-between; }
-.portfolio .portBox ul li[class^=card-wedo]{ position:relative; width:450px; height:450px; margin:-2vh 0; border-radius:100%; overflow:hidden; transition:all .5s ease-out; border:1px solid #000; opacity: 0; transform: translateY(50px); }
-.portfolio .portBox ul li[class^=card-wedo]:hover{ border-radius:0; transition:all .5s; }
+.portfolio .portBox ul li[class^=card-wedo]{ position:relative; width:450px; height:450px; margin:10vh 0; border:1px solid #000; border-radius:100%; overflow:hidden; transition:all .5s ease-out; }
+.portfolio .portBox ul li[class^=card-wedo]:hover{ border-radius:20px; overflow:hidden; transition:all .5s; }
 .portfolio .portBox ul li a{ width:100%; height:100%; }
-.portfolio .portBox ul li .portImgBox { width:100%; height:100%; border-radius:20px; overflow:hidden; }
+.portfolio .portBox ul li .portImgBox { width:100%; height:100%; }
 .portfolio .portBox ul li .portImgBox img{ width:100%; height:100%; object-fit: cover; }
 
 .portfolio .portBox ul li .port_hoverBox{ position:absolute; left:0; top:0; width:100%; height:100%; background:#ffa500; color:#fff; border-radius:20px; opacity:0; z-index:10; padding:3.125vw 2.3vw; box-sizing: border-box; transition:opacity .5s; }
@@ -127,22 +127,24 @@
 .portfolio .portBox ul li .portTxtBox h3{ font-size:35px; font-weight:500; padding-bottom:50px; }
 .portfolio .portBox ul li .portTxtBox p{ color:#888; }
 .portfolio .portBox ul li.card-wedo-01{ margin-left:15vw }
-.portfolio .portBox ul li.card-wedo-02{ margin-left:60vw;  }
-.portfolio .portBox ul li.card-wedo-03{ margin-left:15vw;  }
-.portfolio .portBox ul li.card-wedo-04{ margin-left:60vw;  }
-.portfolio .portBox ul li.card-wedo-05{ margin-left:15vw;  }
-.portfolio .portBox ul li.card-wedo-06{ margin-left:60vw;  }
-.portfolio .portBox ul li.card-wedo-07{ margin-left:15vw;  }
+.portfolio .portBox ul li.card-wedo-02{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-03{ margin-left:15vw; }
+.portfolio .portBox ul li.card-wedo-04{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-05{ margin-left:15vw; }
+.portfolio .portBox ul li.card-wedo-06{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-07{ margin-left:15vw; }
 
 /* history */
 .mainTask{ width:100%; height:100vh; position:relative; z-index: 1; background:#000; margin-top:200px; }
-.mainTask .mainTaskWrap{ width:80%; display:flex; flex-direction: column; justify-content: center; align-items:center; margin:auto; height:100%; padding:50px 0; }
+.mainTask .mainTaskWrap{ width:80%; display:flex; flex-direction: column; justify-content: center; align-items:center; height:100%; padding:50px 0; box-sizing:border-box; margin:0 auto; }
 .mainTask .mainTaskWrap h3{ font-family:"Lalezar", system-ui; font-size:70px; font-weight:500; text-align:center; line-height:1; text-transform: uppercase; color:#fff; }
 .mainTask .mainTaskWrap .mainTaskBox{ margin-top:40px; display:flex; justify-content: center; align-items:center; gap:1vw; }
-.mainTask .mainTaskWrap .mainTaskBox .mainTaskList{ width:8vw; background:#fff; border-radius:10px; height:55vh; transition: all 0.3s ease-in-out; }
-.mainTask .mainTaskWrap .mainTaskBox .mainTaskList h3{ display:none; }
-.mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active{ display:block; width:27vw; background:#ffa500; }
-.mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active h3{ font-size:20px; font-weight:600; display:block; color:#000; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList{ display:flex; width:15vw; height:15vw; padding:15px; box-sizing:border-box; border-radius:10px; transition: all 0.3s ease-in-out; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList .Task_Img{ width:5vw; height:5vw; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList .Task_Img img{ width:100%; height:100%; object-fit: contain; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList h3{ font-size:20px; color:#fff; font-weight:500; line-height:1.5 }
+/*.mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active{ display:block; width:27vw; background:#ffa500; }
+ .mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active h3{ font-size:20px; font-weight:600; display:block; color:#000; } */
 
 /* contact */
 .contact{ position:relative; width:100vw; padding:100px 100px 30px; box-sizing: border-box; }

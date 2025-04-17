@@ -1,44 +1,33 @@
-//02. header  영역 스크롤 방향 이벤트
-$(function(){
-    var prevScrollTop = 0;
-    document.addEventListener("scroll", function(){
-        var nowScrollTop = $(window).scrollTop();
+// //02. header  영역 스크롤 방향 이벤트
+// $(function(){
+//     var prevScrollTop = 0;
+//     document.addEventListener("scroll", function(){
+//         var nowScrollTop = $(window).scrollTop();
 
-        if(nowScrollTop > prevScrollTop){
-            $('.header').addClass('active')
-        }else{
-            $('.header').removeClass('active');
-        }
-        prevScrollTop = nowScrollTop;
-    })
-});
+//         if(nowScrollTop > prevScrollTop){
+//             $('.header').addClass('active')
+//         }else{
+//             $('.header').removeClass('active');
+//         }
+//         prevScrollTop = nowScrollTop;
+//     })
+// });
 
-/* menu */
-let header = document.querySelector('.header');
-let hambNav = document.querySelector('.hambNav');
-hambNav.addEventListener('click', function(){
-    let navBox = document.querySelector('.navBox')
-    if(header.className.includes('fixed')){
-        header.classList.remove('fixed')
-        e.preventDefault();
-        //hambNav.classList.remove('on')
-    }else{
-        header.classList.add('fixed')
-        //hambNav.classList.add('on')
-    }
-})
-
-//02.scrolla.js
-$(function(){
-    $('.animate').scrolla({
-        mobile:true,
-        once:false,
-    })
-})
-
-//splitting
-$(function(){Splitting();})
-
+// /* menu */
+// let header = document.querySelector('.header');
+// let hambNav = document.querySelector('.hambNav');
+// let body = document.body;
+// hambNav.addEventListener('click', function(e){
+//     e.preventDefault();
+//     const isOpen = header.classList.contains('fixed');
+//     if(isOpen){
+//         header.classList.remove('fixed');
+//         body.classList.remove('no-scroll');
+//     }else{
+//         header.classList.add('fixed');
+//         body.classList.add('no-scroll');
+//     }
+// })
 
 $(function(){
 
@@ -64,27 +53,27 @@ $(function(){
     })
 
     /* about me */
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
+    // window.addEventListener('scroll', handleScroll);
+    // window.addEventListener('resize', handleScroll);
 
-    function handleScroll(){
-        var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+    // function handleScroll(){
+    //     var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
 
-        fix(scrollPos)
-    }
+    //     fix(scrollPos)
+    // }
 
-    function fix(scrollPos){
-        var leftH2 = document.querySelector('.about_L h2');
+    // function fix(scrollPos){
+    //     var leftH2 = document.querySelector('.about_L h2');
 
-        if(scrollPos < 200) {
-            leftH2.classList.add('on')
-        } else {
-            leftH2.classList.remove('on')
-        }
-        if(scrollPos < 3600){
-            leftH2.classList.remove('on')
-        }
-    }
+    //     if(scrollPos < 200) {
+    //         leftH2.classList.add('on')
+    //     } else {
+    //         leftH2.classList.remove('on')
+    //     }
+    //     if(scrollPos < 3600){
+    //         leftH2.classList.remove('on')
+    //     }
+    // }
 
 
     let upTxt = document.querySelectorAll('.upTxt')
@@ -177,7 +166,7 @@ $(function(){
         scrollTrigger:{
             trigger:'.portBox',
             start:'100% 50%',
-            end:'50% 0%',
+            end:'90% 0%',
             scrub:1,
         }
     })
