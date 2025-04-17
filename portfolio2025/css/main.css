@@ -40,10 +40,11 @@
 
 
 /* 자기소개 */
-.aboutMe{ position:relative; display:flex; justify-content: center; margin:100px 0; height:100vh !important; top:0 !important; background:#000; color:#fff; }
-.aboutMe .inner{ width:80%; margin:50px auto; display:flex; justify-content: space-between }
+.aboutMe{ position:relative; display:flex; justify-content: center; padding:5vh 0 !important; height:100vh !important; top:0 !important; background:#000; color:#fff; }
+.aboutMe .inner{ width:80%; margin:0 auto; display:flex; justify-content: space-between }
 .aboutMe .inner .about_L{ position:relative; width:45%; padding:45px 60px 45px 0;}
-.aboutMe .inner .about_L:after{ content:''; position:absolute; width:1px; height:80%; background:#818181; top:50%; right:0; transform:translateY(-50%) }
+.aboutMe .inner .about_L:after{ content:''; position:absolute; width:1px; height:80%; background:#818181; top:55%; right:0; transform:translateY(-50%) }
+.aboutMe .inner .about_L h2{ padding-left:12vh; }
 .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:50px; font-weight:600;  }
 .aboutMe .inner .about_L h2.on{ position:absolute; left:0; top:10%; transition:.3s; }
 .aboutMe .inner .about_R{ width:50%; padding:125px 0 125px 40px; }
@@ -79,7 +80,7 @@
 /* works */
 .works{ display:flex; justify-content: flex-end; background:#fff; height:100vh !important; }
 .works .inner{ width:90%; padding:60px 67px ; border-radius:50px 0 0 50px; display:flex; flex-direction: column; align-items:center; justify-content:center; }
-.works .inner h3{ font-family:"Lalezar", system-ui; font-size:70px; font-weight:600; line-height:1; text-transform: uppercase; color:#000; }
+.works .inner h3{ font-family:"Lalezar", system-ui; font-size:100px; font-weight:500; line-height:1; text-transform: uppercase; color:#000; }
 .works .inner > p{ font-size:25px; margin-top:10px; font-weight:500; color:#000; }
 .worksBox{ margin-top:60px; overflow-x:hidden; }
 .workWrap{ display:flex; gap:20px; }
@@ -104,7 +105,7 @@
 
 /* portfolio */
 .portfolio { position:relative; }
-.portfolio .portTitle{ width:100%; height:100vh; text-align:center; padding-top:20vh; box-sizing:border-box; }
+.portfolio .portTitle{ width:100%; text-align:center; padding-top:20vh; box-sizing:border-box; }
 .portfolio .portTitle p{ font-size:220px; line-height:0.9; }
 .portfolio .portTitle .portA{ font-family:'Public Sans', sans-serif }
 .portfolio .portTitle .portB{ font-family:'Cormorant Infant', serif }
@@ -112,13 +113,13 @@
 
 .portfolio .portBox{ width:100%; margin:0 auto; }
 .portfolio .portBox ul{ display:flex; flex-wrap:wrap; justify-content: space-between; }
-.portfolio .portBox ul li[class^=card-wedo]{ position:relative; width:450px; height:450px; margin:2vh 0; border-radius:100%; overflow:hidden; transition:all .5s ease-out; border:1px solid #000; }
+.portfolio .portBox ul li[class^=card-wedo]{ position:relative; width:450px; height:450px; margin:-2vh 0; border-radius:100%; overflow:hidden; transition:all .5s ease-out; border:1px solid #000; opacity: 0; transform: translateY(50px); }
 .portfolio .portBox ul li[class^=card-wedo]:hover{ border-radius:0; transition:all .5s; }
 .portfolio .portBox ul li a{ width:100%; height:100%; }
 .portfolio .portBox ul li .portImgBox { width:100%; height:100%; border-radius:20px; overflow:hidden; }
 .portfolio .portBox ul li .portImgBox img{ width:100%; height:100%; object-fit: cover; }
 
-.portfolio .portBox ul li .port_hoverBox{ position:absolute; left:0; top:0; width:100%; height:100%; background:#FFBF0E; color:#fff; border-radius:20px; opacity:0; z-index:10; padding:3.125vw 2.3vw; box-sizing: border-box; transition:opacity .5s; }
+.portfolio .portBox ul li .port_hoverBox{ position:absolute; left:0; top:0; width:100%; height:100%; background:#ffa500; color:#fff; border-radius:20px; opacity:0; z-index:10; padding:3.125vw 2.3vw; box-sizing: border-box; transition:opacity .5s; }
 .portfolio .portBox ul li .port_hoverBox h3{ font-size:30px; }
 .portfolio .portBox ul li .port_hoverBox p{ position:absolute; bottom:20%; }
 .portfolio .portBox ul li:hover .port_hoverBox{ opacity:1; }
@@ -134,10 +135,17 @@
 .portfolio .portBox ul li.card-wedo-07{ margin-left:15vw;  }
 
 /* history */
-.mainHistory{ width:100%; height:100vh; position:relative; z-index: 1; }
+.mainTask{ width:100%; height:100vh; position:relative; z-index: 1; background:#000; margin-top:200px; }
+.mainTask .mainTaskWrap{ width:80%; display:flex; flex-direction: column; justify-content: center; align-items:center; margin:auto; height:100%; padding:50px 0; }
+.mainTask .mainTaskWrap h3{ font-family:"Lalezar", system-ui; font-size:70px; font-weight:500; text-align:center; line-height:1; text-transform: uppercase; color:#fff; }
+.mainTask .mainTaskWrap .mainTaskBox{ margin-top:40px; display:flex; justify-content: center; align-items:center; gap:1vw; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList{ width:8vw; background:#fff; border-radius:10px; height:55vh; transition: all 0.3s ease-in-out; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList h3{ display:none; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active{ display:block; width:27vw; background:#ffa500; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active h3{ font-size:20px; font-weight:600; display:block; color:#000; }
 
 /* contact */
-.contact{ position:relative; width:100vw; margin:100px 0 30px; padding:0 100px; box-sizing: border-box; }
+.contact{ position:relative; width:100vw; padding:100px 100px 30px; box-sizing: border-box; }
 .contact .contactWrap { margin:0 auto;}
 .contact .contactWrap .contactBox{ border-top:1px solid #fff; border-bottom:1px solid #fff; }
 .contact .contactWrap h2{ font-family:"Lalezar", system-ui; font-size:70px; text-transform: uppercase; line-height:1; margin-bottom:30px; }

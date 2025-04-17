@@ -1,4 +1,4 @@
-.font_Yello{ color:#FFBF0E; }
+.font_Yello{ color:#ffa500; }
 .font_mint{ color:#49F9D5; }
 
 .en2 {font-family: 'Cormorant Infant', serif; letter-spacing: -1px;}
@@ -52,7 +52,7 @@
     30%{transform:translateY(30px); opacity: 0;}
 }
 
-footer{ width:100%; padding-bottom:30px; }
+footer{ width:100%; padding-bottom:30px; background:#000; }
 .footerWrap { padding:0 100px; }
 .copyright{ padding-left:10px; font-size:14px; color:rgba(255,255,255,.5); }
 
