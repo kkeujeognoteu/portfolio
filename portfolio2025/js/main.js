@@ -141,7 +141,7 @@ $(function(){
 
     .fromTo('.portfolio .portTitle .portA',{x:'-100%'},{x:'0%', ease:'none', duration:5},0)
     .fromTo('.portfolio .portTitle .portB',{x:'100%'},{x:'0%', ease:'none', duration:5},0)
-    .fromTo('.portfolio .portTitle .portC', {x:'100%'},{x:'0%', ease:'none',duration:5},0)
+ 
     .fromTo('.portfolio .portC', {y:'-100%'},{x:'0%', ease:'none'},0)
 
     gsap.timeline({

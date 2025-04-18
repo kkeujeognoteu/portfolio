@@ -10,6 +10,7 @@ $(function(){
 //splitting
 $(function(){Splitting();})
 
+
 //02. header  영역 스크롤 방향 이벤트
 $(function(){
     var prevScrollTop = 0;
@@ -23,6 +24,13 @@ $(function(){
         }
         prevScrollTop = nowScrollTop;
     })
+
+    if(!$('.subPg').length){
+        $(window).on('scroll', function(){
+            $('.navBox').removeClass('active')
+        })
+
+    }
 });
 
 /* menu */

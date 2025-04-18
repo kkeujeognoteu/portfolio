@@ -49,6 +49,7 @@
     30%{transform:translateY(30px); opacity: 0;}
 }
 
-footer{ width:100%; padding-bottom:30px; background:#000; }
+footer{ width:100%; background:#000; }
 .footerWrap { padding:0 100px; }
-.copyright{ padding-left:10px; font-size:14px; color:rgba(255,255,255,.5); }
+.main .copyright{ padding:0 0 30px 10px; font-size:14px; color:rgba(255,255,255,.5); }
+.subPg .copyright{ padding:50px 0 50px 10px; font-size:14px; color:rgba(255,255,255,.5); }

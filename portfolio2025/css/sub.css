@@ -6,9 +6,10 @@
 /* .sub_port .pin-spacer{ margin:0 !important; padding:0 !important; height:0 !important; } */
 
 .sub_port{ position:relative; width:100%; }
-.sub_port .subTopSlide{ position:relative; width:100vw; height:100vh; background:#000; box-sizing: border-box; }
-.sub_port .subTopSlide h2{ position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); transition:.3s ease-out; animation:headTite .3s cubic-bezier(.5,0,.5,1)both; z-index:1; }
-.sub_port .subTopSlide h2 .char{ font-family:"Lalezar", system-ui; font-size:120px; color:#ffa500; font-weight:700; letter-spacing:10px; text-transform: uppercase; }
+.subTopslideWrap{ position:relative }
+.sub_port .subTopSlide{ position:relative; width:100vw; height:100vh; background:#000; box-sizing: border-box; display:flex; justify-content:center; align-items:center;}
+.sub_port .subTopSlide .subTitle{ position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); transition:.3s ease-out; animation:headTite .3s cubic-bezier(.5,0,.5,1)both; z-index:1; }
+.sub_port .subTopSlide .subTitle .char{ font-family:"Lalezar", system-ui; font-size:120px; color:#ffa500; font-weight:700; letter-spacing:10px; text-transform: uppercase; }
 
 .sub_port .subTopSlide .subTitle.motion .char{ display:inline-block; animation:slide_up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)) }
 /* 
@@ -33,13 +34,24 @@
 .portTab{ display:flex; justify-content: space-between; padding-bottom:15px; align-items:center; border-bottom:1px solid #7C7C7C; }
 .portFilter_wrap  .portFilter{ padding:10px 0; display:flex; }
 .portFilter_wrap  .portFilter ul{ display:flex; align-items:center; padding-left:10px; }
-.portFilter_wrap  .portFilter ul li{ color:#7C7C7C }
+.portFilter_wrap  .portFilter ul li{ color:#7C7C7C; cursor:pointer; }
+.portFilter_wrap  .portFilter ul li:hover{ color:#000; transition:all .3s; }
 .portFilter_wrap  .portFilter ul li + li{ padding:0 20px;}
+.portFilter_wrap  .portFilter ul li{ transform:rotateY(0) }
+.portFilter_wrap  .portFilter ul li:hover{ transform:rotateY(180deg) }
 .portFilter_wrap  .portFilter ul li.active{ color:#000; transition:all 3s; }
 .portFilter_wrap  .portFilter ul li, .portFilter_wrap  .portFilter span{ text-transform: uppercase; }
-.portFilter_wrap  .portFilter .port_switcher{ color:#7C7C7C }
-.portFilter_wrap  .portFilter .port_switcher.active{ color:#000 }
+.portFilter_wrap .port_switcher .switer-grid{ color:#7C7C7C }
+.portFilter_wrap .port_switcher .switer-grid.active{ color:#000 }
 
 .portBox{ display:flex; flex-wrap:wrap; gap:2vw 2vh; }
 .portBox .portList{ width:32.4%; }
+.portList {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: opacity, transform;
+  }
 .portBox .portList .portThumb{ width:100%; position:relative; padding-top:calc(50 /100*100%); background:url(../images/thumb01.jpeg)no-repeat top center; background-size:contain; }
+
+.portContTab{ display:none; }
+.portContTab.active{ display:block;  }
