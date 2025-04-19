@@ -25,6 +25,7 @@ $(function(){
         prevScrollTop = nowScrollTop;
     })
 
+    // 서브페이지에 스크롤시 이벤트가 실행되는 것을 막는다
     if(!$('.subPg').length){
         $(window).on('scroll', function(){
             $('.navBox').removeClass('active')
