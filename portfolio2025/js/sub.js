@@ -38,12 +38,11 @@ $(document).ready(function () {
                 left: '220px',
                 transform: 'translate(0, 0%)',
                 scale: 0.5,
-                zIndex: 9999,
+                zIndex: 1,
                 ease: "none"
             }, 0)
             .to(".sub_port .subTopSlide .subTitle", {
-                top: '-10%',
-                
+                top: '-10%',                
                 ease: "none"
             }, 1.5)
 
@@ -108,7 +107,6 @@ $(function(){
             start: '90% 90%',
             end: '100% 100%',
             scrub: 1,
-            markers: true
         },
         backgroundColor:'#000'
     })
@@ -131,4 +129,11 @@ $(function(){
     //         portTabs.querySelector('.port_filter').classList.add('on');
     //     })
     // })
+    let portTabHov = document.querySelectorAll('.port_filterring li');
+    portTabHov.forEach(function(portTabHov){
+        portTabHov.addEventListener('mouseover', function(){
+            portTabHov.classList.add('on');
+            portTabHov.querySelector('.port_filterring').classList.add('on');
+        })
+    })
 })

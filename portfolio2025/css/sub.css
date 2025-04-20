@@ -28,30 +28,34 @@
 .portHead{ max-width:1440px; height:auto; margin:0 auto; padding:10px; }
 .portHead h2{ font-size:35px; font-weight:600; color:#000; }
 .portHead h2 span{ font-size:18px; color:#ffa500; padding-left:10px; }
-.portHead p{ color:#7C7C7C; font-size:18px; }
+.portHead p{ margin:10px 0; color:#c9c9c9; font-size:18px;  font-weight:400 }
 
 .portFilter_wrap{ width:1440px; margin:auto;  }
 .portTab{ display:flex; justify-content: space-between; padding:15px 0; align-items:center; border-bottom:1px solid #7C7C7C; }
-.portFilter_wrap  .portFilter{ display:flex; }
-.portFilter_wrap  .portFilter ul{ display:flex; align-items:center; padding-left:10px; }
-.portFilter_wrap  .portFilter ul li{ color:#7C7C7C; cursor:pointer; }
-.portFilter_wrap  .portFilter ul li:hover{ color:#000; transition:all .3s; }
-.portFilter_wrap  .portFilter ul li + li{ padding:0 20px;}
-.portFilter_wrap  .portFilter ul li{ transform:rotateY(0) }
-.portFilter_wrap  .portFilter ul li:hover{ transform:rotateY(360deg) }
-.portFilter_wrap  .portFilter ul li.active{ color:#000; transition:all 3s; }
-.portFilter_wrap  .portFilter ul li, .portFilter_wrap  .portFilter span{ text-transform: uppercase; }
-.portFilter_wrap .port_switcher .switer-grid{ color:#7C7C7C }
+
+.portFilter{ display:flex; }
+.portFilter ul{ display:flex; gap:10px; align-items:center; padding-left:10px; }
+.portFilter .port_filterring.on li{ display:block; }
+.portFilter ul li{ position:relative; color:#7C7C7C; cursor:pointer; padding:0 10px; display:none; }
+.portFilter ul li:hover{ color:#000;  }
+.portFilter ul li:before, .portFilter ul li:after{ position:absolute; display:inline-block; opacity:0; -webkit-transition: transform .3s, opacity .2s; -moz-transition: transform .3s, opacity .2s; transition: transform .3s, opacity .2s }
+.portFilter ul li:before{ content:'['; left:0; -webkit-transform: translateX(20px); -moz-transform: translateX(20px); transform: translateX(20px); }
+.portFilter ul li:after{ content:']'; right:0; -webkit-transform: translateX(-20px); -moz-transform: translateX(-20px); transform: translateX(-20px) }
+.portFilter ul li:hover:before, .portFilter ul li:hover:after, .portFilter ul li:focus:before, .portFilter ul li:focus:after, .portFilter ul li.active:before, .portFilter ul li.active:after{ opacity:1; -webkit-transform: translateX(0); -moz-transform: translateX(0); transform: translateX(0) }
+.portFilter ul li.active{ color:#000; transition:all 3s; }
+
+.portFilter_wrap .port_switcher ul{ display:flex; }
+.portFilter_wrap .port_switcher .switer-grid{ position:relative; color:#7C7C7C; }
+.portFilter_wrap .port_switcher .switer-grid:nth-child(2){ padding-left:10px; margin-left:5px; }
+.portFilter_wrap .port_switcher .switer-grid:nth-child(2):before{ content:'/'; position:absolute; width:10px; height:100%; left:0; top:0; }
 .portFilter_wrap .port_switcher .switer-grid.active{ color:#000 }
 
-.subPortBox{ display:flex; flex-wrap:wrap; gap:2vw 2vh; }
-.subPortBox .portList{ width:32.4%; }
-.portList {
-    opacity: 0;
-    transform: translateY(50px);
-    will-change: opacity, transform;
-  }
+.portCont { margin-top:20px; }
+.portContTab{ display:none; }
+.portContTab.active{ display:block; }
+.portContTab .subPortBox{ display:flex; flex-wrap:wrap; gap:2vw 2vh; }
+.portContTab .subPortBox .portList{ width:32.4%; }
+
 .subPortBox .portList .portThumb{ width:100%; position:relative; padding-top:calc(50 /100*100%); background:url(../images/thumb01.jpeg)no-repeat top center; background-size:contain; }
 
-.portContTab{ display:none; }
-.portContTab.active{ display:block;  }
+
