@@ -1,24 +1,16 @@
 @charset "utf-8";
 
 .subPg{ position:relative; }
-.subPg span, .subPg p, .subPg h2, .subPg h3, .subPg h4, .subPg h5, .subPg h6, .subPg strong, .subPg li, .subPg a{ color:#000; }
+/* .subPg span, .subPg p, .subPg h2, .subPg h3, .subPg h4, .subPg h5, .subPg h6, .subPg strong, .subPg li, .subPg a{ color:#000; } */
 
 /* .sub_port .pin-spacer{ margin:0 !important; padding:0 !important; height:0 !important; } */
 
 .sub_port{ position:relative; width:100%; }
 .subTopslideWrap{ position:relative }
-.sub_port .subTopSlide{ position:relative; width:100vw; height:100vh; background:#000; box-sizing: border-box; display:flex; justify-content:center; align-items:center;}
-.sub_port .subTopSlide .subTitle{ position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); transition:.3s ease-out; animation:headTite .3s cubic-bezier(.5,0,.5,1)both; z-index:1; }
-.sub_port .subTopSlide .subTitle .char{ font-family:"Lalezar", system-ui; font-size:120px; color:#ffa500; font-weight:700; letter-spacing:10px; text-transform: uppercase; }
-
-.sub_port .subTopSlide .subTitle.motion .char{ display:inline-block; animation:slide_up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)) }
-/* 
-@keyframes headTite{
-    0%{ left:50%; top:50%; transform:translate(-50%, -50%); }
-    80%{ left:0; top:0; transform: (0,0); font-size:30px; }
-    100%{ top:-100%; opacity:0; }
-} */
-
+.subTopSlide{ position:relative; width:100vw; height:100vh; background:#000; box-sizing: border-box; display:flex; justify-content:center; align-items:center;}
+.subTopSlide .subTitle{ position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); transition:.3s ease-out;  z-index:1; }
+.subTopSlide .subTitle .char{ font-family:"Lalezar", system-ui; font-size:120px; color:#ffa500; font-weight:700; letter-spacing:10px; text-transform: uppercase; }
+.subTopSlide .subTitle.motion .char{ display:inline-block; animation:slide_up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)) }
 @keyframes slide_up{
     0%{transform:translateY(30px); opacity: 0;}
     30%{transform:translateY(30px); opacity: 0;}
@@ -34,8 +26,9 @@
 .portTab{ display:flex; justify-content: space-between; padding:15px 0; align-items:center; border-bottom:1px solid #c9c9c9; }
 
 .portTab .portFilter{ display:flex; }
+.portTab .portFilter span{ color:#000; }
 .portTab .portFilter ul{ display:flex; gap:10px; align-items:center; padding-left:10px; }
-.portTab .portFilter .port_filterring.on li{ display:block; }
+.portTab .portFilter .port_filterring li.active{ display:block; }
 .portTab .portFilter ul li{ position:relative; color:#7C7C7C; cursor:pointer; padding:0 10px; }
 .portTab .portFilter ul li:hover{ color:#000;  }
 .portTab .portFilter ul li:before, .portFilter ul li:after{ position:absolute; display:inline-block; opacity:0; -webkit-transition: transform .3s, opacity .2s; -moz-transition: transform .3s, opacity .2s; transition: transform .3s, opacity .2s }
@@ -45,35 +38,50 @@
 /* .portTab .portFilter ul li.active{ display:block; color:#000; transition:all 3s; } */
 
 .portFilter_wrap .port_switcher ul{ display:flex; }
-.portFilter_wrap .port_switcher .switer-grid{ position:relative; color:#7C7C7C; }
+.portFilter_wrap .port_switcher .switer-grid{ position:relative; color:#7C7C7C; cursor:pointer; }
 .portFilter_wrap .port_switcher .switer-grid:nth-child(2){ padding-left:10px; margin-left:5px; }
 .portFilter_wrap .port_switcher .switer-grid:nth-child(2):before{ content:'/'; position:absolute; width:10px; height:100%; left:0; top:0; }
 .portFilter_wrap .port_switcher .switer-grid.active{ color:#000 }
 
+.tab-content{ display:none; } 
+.tab-content.active{ display:block; } 
 .portTab02 { margin-top:20px; }
 .portTab02 ul{ display:flex; }
 .portTab02 ul li{ position:relative; cursor:pointer; margin:0 10px; overflow:hidden }
-.portTab02 ul li span{ display:block; width:100%; height:100%; padding:8px 20px; color:#000; border:1px solid #ffa500;  font-size:14px; box-sizing: border-box; }
+.portTab02 ul li span{ display:block; width:100%; height:100%; padding:8px 20px; color:#f19c00; border:1px solid #ffa500;  font-size:14px; box-sizing: border-box; }
 .portTab02 ul li:after{ content:attr(data-hover); position:absolute; width:100%; height:100%; left:-100%; top:0; background:#fff; text-align:center; align-content:center; font-size:14px; transition:.3s; overflow:hidden; z-index:-1 }
-.portTab02 ul li:hover span{ color:#fff; transform:translateX(100%); width:100%; height:100%; }
+.portTab02 ul li:hover span, .portTab02 ul li.active span  { color:#fff; transform:translateX(100%); width:100%; height:100%; }
 .portTab02 ul li:hover:after, .portTab02 ul li.active:after{ background:#ffa500; left:0%; transform:translateX(0%); }
+.portTab02 ul li.active:after span{ color:#fff; }
 
 /* 포트폴리오 cont */
-.portCont { margin-top:20px; display:none; }
-.portCont.active{ display:block; }
+.tabGrid{ padding-bottom:100px; margin-top:40px; }
 .portContTab{ display:none; }
 .portContTab.active{ display:block; }
-.subPortBox{ display:flex; flex-wrap:wrap; gap:2vw 2vh; }
-.subPortBox .portList{ width:45%; overflow:hidden;  }
-.subPortBox .portList .portThumb{ width:100%; position:relative; padding-top:calc(50 /100*100%); background:url(../images/thumb01.jpeg)no-repeat top center; background-size:contain; }
-.subPortBox .portList .portTxt{ position:absolute; padding:20px 10px; bottom:-100%; left:0; background:#ffa500; border-radius:20px 20px 0 0; opacity: 0; transition:all .3s }
-.subPortBox .portList:hover .portTxt{ position:absolute; bottom:0; left:0; opacity:1; }
 
-.portCont02.active{ display:block; }
-.portCont02 .portContTab_lst{ margin-top:20px; }
-.portCont02 .portContTab_lst .portList { padding:15px 10px; border-bottom:1px solid #c9c9c9; }
-.portCont02 .portContTab_lst .portList .portTxt{ display:flex; }
-.portCont02 .portContTab_lst .portList .portTxt h3{ color:#000; }
-.portCont02 .portContTab_lst .portList .portTxt p{ margin-left:40%; color:#7C7C7C; font-weight:500 }
-.portCont02 .portContTab_lst .portList .portTxt .infoBtn{ margin-left:auto; display:flex; gap:10px; }
-.portCont02 .portContTab_lst .portList .portTxt .infoBtn a{ padding:5px 10px; background:#ffa500; color:#fff; font-size:14px; }
+.subPortBox{ display:grid; grid-template-columns:1fr 1fr; grid-column-gap:30px; grid-row-gap:30px; }
+.subPortBox .portList{ width:100%; overflow:hidden;     box-shadow: 0 0 7px 0 rgba(0, 0, 0, .1); transition: box-shadow .3s ease, transform .3s ease, -webkit-transform .3s ease; }
+.subPortBox .portList:hover{ transform: translate3d(0, -6px, 0) !important; box-shadow: 0 .8125rem 1rem rgba(35, 35, 35, .15) !important; }
+.subPortBox .portList .portThumb{ height:360px; border-bottom:1px solid #ededed; background:#fff; }
+.subPortBox .portList .portThumb img{ width:100%; height:100%; object-fit: contain; }
+.subPortBox .portList .portTxt{ position:relative; padding:20px; background:#fff; }
+.subPortBox .portList .portTxt ul{ padding:0; }
+.subPortBox .portList .portTxt ul .type{ display:inline-block; padding:5px 20px 7px; background:#28bc9e; color:#fff; font-size:13px; line-height: 1; border-radius:50px; }
+.subPortBox .portList .portTxt h3{ font-size:20px; color:#000; font-weight:700; padding:10px 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; word-break:break-word; }
+.subPortBox .portList .portTxt .portTxt02{ font-size:14px; color:#7C7C7C; text-overflow:ellipsis; overflow:hidden; font-weight:500; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-break:break-word }
+.subPortBox .portList .portTxt .lst_btn{ margin-top:30px; }
+.subPortBox .portList .portTxt .lst_btn button{ display:inline-block; padding:5px 15px; border:1px solid #e0e0e0; color:#7C7C7C; }
+
+.portCont02, .portContTab_lst{ display:none; }
+.portCont02.active, .portContTab_lst.active{ display:block; }
+
+.portContTab_lst .portList { position:relative; padding:15px 10px; border-bottom:1px solid #c9c9c9; }
+.portContTab_lst .portList img.fadeImg{ position:fixed; top:0%; left:0%; width:350px; height:auto; pointer-events:none; z-index:9999; opacity: 0; }
+
+.portContTab_lst .portList .portTxt{ display:flex; gap:10px; }
+
+.portContTab_lst .portList .portTxt h3{ width:60%; }
+.portContTab_lst .portList .portTxt h3 a{ color:#000; }
+.portContTab_lst .portList .portTxt p{ width:30%; color:#7C7C7C; font-weight:500; text-align:center; font-style: italic; }
+.portContTab_lst .portList .portTxt .infoBtn{ width:10%; display:flex; gap:10px; justify-content:center; }
+.portContTab_lst .portList .portTxt .infoBtn a{ padding:5px 10px; background:#ffa500; color:#fff; font-size:14px; }
