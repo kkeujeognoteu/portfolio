@@ -108,10 +108,12 @@ $(function(){
             end: '100% 100%',
             scrub: 1,
         },
-        backgroundColor:'#000'
+        backgroundColor:'#000',
+        color:'#fff',
     })
       
 
+    
     // gsap.utils.toArray('.fixedWrap').forEach((panel, i) => {
     //     ScrollTrigger.create({
     //         trigger: panel,
@@ -122,18 +124,40 @@ $(function(){
     //       });
     // });
     
-    // let portTabs = document.querySelectorAll('.port_filterring li');
-    // portTabs.forEach(function(portTabs){
-    //     portTabs.addEventListener('click', function(){
-    //         portTabs.classList.add('on');
-    //         portTabs.querySelector('.port_filter').classList.add('on');
-    //     })
-    // })
-    let portTabHov = document.querySelectorAll('.port_filterring li');
-    portTabHov.forEach(function(portTabHov){
-        portTabHov.addEventListener('mouseover', function(){
-            portTabHov.classList.add('on');
-            portTabHov.querySelector('.port_filterring').classList.add('on');
+
+    let portItem02 = document.querySelectorAll('.portTab02 ul li');
+    let portTabCont02 = document.querySelectorAll('.portCont .portContTab');
+
+    portItem02.forEach((item,index)=>{
+        item.addEventListener('click', function(e){
+            e.preventDefault();
+            portTabCont02.forEach(function(content){
+                content.classList.remove('active');
+            })
+            portItem02.forEach(function(content){
+                content.classList.remove('active');
+            })
+            
+            portItem02[index].classList.add('active');
+            portTabCont02[index].classList.add('active');
+        })
+    })
+
+    let portItem_Lst = document.querySelectorAll('.port_switcher ul li');
+    let portTabCont_Lst = document.querySelectorAll('.tab-content');
+
+    portItem_Lst.forEach((item,index)=>{
+        item.addEventListener('click', function(e){
+            e.preventDefault();
+            portTabCont_Lst.forEach(function(content){
+                content.classList.remove('active');
+            })
+            portItem_Lst.forEach(function(content){
+                content.classList.remove('active');
+            })
+            
+            portItem_Lst[index].classList.add('active');
+            portTabCont_Lst[index].classList.add('active');
         })
     })
 })
