@@ -1,85 +1,86 @@
 
-//서브페이지 메인 타이틀
+
 $(document).ready(function () {
+    //서브페이지 메인 타이틀
     $('.subTopSlide').addClass('active');
-    initGsapScroll();
-  });
-  
-  var titScroll = null;
-  
-  function resetStyles() {
-    $(".sub_port .subTopSlide .subTitle").css({
-      top: '',
-      left: '',
-      transform: '',
-      fontSize: ''
+        initGsapScroll();
     });
-  }
   
-  function initGsapScroll() {
-    if (window.innerWidth >= window.innerHeight) {
-      if (titScroll === null) {
-        titScroll = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".sub_port .subTopSlide",
-            start: "top top",
-            end: "bottom-=15% top",
-            anticipatePin: true,
-            scrub: 0.5,
-            toggleActions: "play none none reverse",
-            pin: false,
-            markers: false,
-          }
+    var titScroll = null;
+    
+    function resetStyles() {
+        $(".sub_port .subTopSlide .subTitle").css({
+        top: '',
+        left: '',
+        transform: '',
+        fontSize: ''
         });
-  
-        titScroll
-            .to(".sub_port .subTopSlide .subTitle", {
-                top: '8%',
-                left: '220px',
-                transform: 'translate(0, 0%)',
-                scale: 0.5,
-                zIndex: 1,
-                ease: "none"
-            }, 0)
-            .to(".sub_port .subTopSlide .subTitle", {
-                top: '-10%',                
-                ease: "none"
-            }, 1.5)
-
-
-            .to(".sub_port .subTopSlide", {
-                backgroundColor: '#fff',
-                ease: "none"
-            }, 0)
-        }
-
-        titScroll = gsap.timeline({
-            scrollTrigger: {
-              trigger: ".sub_port .subTopSlide",
-              start: "20% top",
-             end: "80% 0%",
-              anticipatePin: true,
-              scrub: 0.5,
-              toggleActions: "play none none reverse",
-              pin: false,
-              markers: false,
-            }
-        })
-    } else {
-      if (titScroll !== null) {
-        titScroll.kill(true); // scrollTrigger 포함 제거
-        titScroll = null;
-        resetStyles();
-      }
     }
-}
+    
+    function initGsapScroll() {
+        if (window.innerWidth >= window.innerHeight) {
+            if (titScroll === null) {
+                titScroll = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".sub_port .subTopSlide",
+                        start: "top top",
+                        end: "bottom-=15% top",
+                        anticipatePin: true,
+                        scrub: 0.5,
+                        toggleActions: "play none none reverse",
+                        pin: false,
+                        markers: false,
+                    }
+                });
+  
+                titScroll
+                    .to(".sub_port .subTopSlide .subTitle", {
+                        top: '8%',
+                        left: '220px',
+                        transform: 'translate(0, 0%)',
+                        scale: 0.5,
+                        zIndex: 1,
+                        ease: "none"
+                    }, 0)
+                    .to(".sub_port .subTopSlide .subTitle", {
+                        top: '-10%',                
+                        ease: "none"
+                    }, 1.5)
 
-// 반응형 대응을 위해 resize 시 재실행
-window.addEventListener('resize', function () {
-    initGsapScroll();
-});
 
-$(function(){
+                    .to(".sub_port .subTopSlide", {
+                        backgroundColor: '#fff',
+                        ease: "none"
+                    }, 0)
+                
+
+                titScroll = gsap.timeline({
+                    scrollTrigger: {
+                    trigger: ".sub_port .subTopSlide",
+                    start: "20% top",
+                    end: "80% 0%",
+                    anticipatePin: true,
+                    scrub: 0.5,
+                    toggleActions: "play none none reverse",
+                    pin: false,
+                    markers: false,
+                    }
+                })
+            } else if (titScroll !== null){
+                titScroll.kill(true); // scrollTrigger 포함 제거
+                titScroll = null;
+                resetStyles();
+            }
+        }
+    
+    }
+
+    // 반응형 대응을 위해 resize 시 재실행
+    window.addEventListener('resize', function () {
+        initGsapScroll();
+    });
+
+    $(function(){
     // gsap
     gsap.registerPlugin(ScrollTrigger);
     
@@ -112,19 +113,8 @@ $(function(){
         color:'#fff',
     })
       
-
     
-    // gsap.utils.toArray('.fixedWrap').forEach((panel, i) => {
-    //     ScrollTrigger.create({
-    //         trigger: panel,
-    //         start: "top top",
-    //         //end:"bottom 300%",
-    //         //pin: true,
-    //         markers: true
-    //       });
-    // });
-    
-    /*   */
+    /* 포트폴리오 페이지 - tab */
     let portItem02 = document.querySelectorAll('.portTab02 ul li');
     let portTabCont02 = document.querySelectorAll('.portCont .portContTab');
     let portTabCont03 = document.querySelectorAll('.portCont02 .portContTab_lst');
@@ -134,6 +124,127 @@ $(function(){
     
 
     portItem02.forEach((item,index)=>{
+
+        const work = [
+            {
+                company : "(주)유엔비즈",
+                filterType : ['적응형', '유지보수'],
+                title : 'KPGA 통합플랫폼 운영 및 고도화 용역',
+                summary:'kpga는 한국 남자 프로골프의 공식정보를 확인할수 있는 사이트이며, 사용자 홈페이지 및 Admin 페이지 유지보수 작업하였습니다.',
+                detail : '',
+                link : '',
+                thumbImb:'thumb01',
+            },
+            {
+                company : "(주)유엔비즈",
+                filterType : ['유지보수'],
+                title : '경상남도체육회 홈페이지 유지보수',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'fgff',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형', '웹접근성'],
+                title : '남도사이버갤러리',
+                summary:'웹접근성 검사를 위해 유지보수 작업을 하였습니다.',
+                detail : '',
+                link : '',
+                thumbImb:'namdo',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형', '웹접근성', '유지보수','php개발'],
+                title : '남도사이버갤러리',
+                summary:'소장품 페이지 디자인을 변경하고, myspl을 사용해 php개발 작업을 하였습니다.',
+                detail : '',
+                link : '',
+                thumbImb:'namdo',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['앱'],
+                title : '메이커스페이스 앱',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'makersApp_thumb',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형', '유지보수'],
+                title : 'KEA 한국전자정보통신산업진흥회',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'kea_logo',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형', '유지보수'],
+                title : '한국자동차연구원',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'katech_thumb',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형', '유지보수'],
+                title : '차세대 바이오헬스산업 혁신인재양성사업',
+                summary:'사업안내 페이지에 있는 주관대학 소개 페이지를 유지보수 작업 하였습니다.',
+                detail : '',
+                link : '',
+                thumbImb:'biho_thum',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형', '유지보수'],
+                title : '차세대융합기술연구원 메이커스페이스 전문랩',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'makers_thumb',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형', '유지보수'],
+                title : '미래형자동차 기술혁신인재양성',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'future_thumb',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형'],
+                title : '한국자동차환경협회 전기차충전인프라 교육센터',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'edu_thumb',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형'],
+                title : '미래형자동차 현장인력양성사업',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'carStudy_thumb',
+            },
+            {
+                company : "(주)유니픽스",
+                filterType : ['반응형'],
+                title : '한국디지털헬스산업협회',
+                summary:'',
+                detail : '',
+                link : '',
+                thumbImb:'kodhia_thumb',
+            },
+
+        ];
         const companyData = {
             "All": {
               title: "전체 포트폴리오",
@@ -267,5 +378,41 @@ $(function(){
             fade.reverse();
             stopPoint(); // 🔥 중요!
         });
+    });
+
+    /* about */
+    let subPinTit = document.querySelectorAll('.titleList');
+
+    let subPinT1 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.aboutInfo',
+        scrub: 0.5,
+        pin: true,
+        start: 'top top',
+        end: '+=400%',
+        markers: false
+    }
+    });
+
+    // titleList를 아래에서 위로 등장시키는 자연스러운 애니메이션
+    subPinT1.from(subPinTit, {
+    y: 100,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    stagger: 1 // 오타 수정 + 각 항목 순차적으로 등장
+    });
+
+
+    gsap.from(".nanum-neo", {
+        scrollTrigger: {
+          trigger: ".txt-wrap",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
     });
 })
