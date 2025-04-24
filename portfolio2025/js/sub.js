@@ -155,5 +155,39 @@ $(document).ready(function () {
         }
     })
     .to(".subPg",{backgroundColor:'#000', ease:'power2.in', duration:1},0)
+
+    /* tool */
+    const toolCard = document.querySelectorAll('.toolCard');
+    toolCard.forEach((item)=>{
+        item.addEventListener('mouseenter', () => {
+            toolCard.forEach((el)=>el.classList.remove('active'));
+            item.classList.add('active');
+        })
+        item.addEventListener('mouseleave',()=>{
+            toolCard.forEach((el) => el.classList.remove('active'))
+        })
+        toolCard[0].classList.add('active');
+    })
+
+    scrollChart = gsap.timeline({
+        scrollTrigger:{
+            trigger:'.toolCon',
+            start:'top top',
+            end:'bottom bottom',
+            scrub:1,
+            markers:true
+        }
+    })
+    scrollChart
+        .fromTo('.chart01', {width:0, opacity:0}, {width:'90%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart02', {width:0, opacity:0}, {width:'80%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart03', {width:0, opacity:0}, {width:'30%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart04', {width:0, opacity:0}, {width:'30%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart05', {width:0, opacity:0}, {width:'60%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart06', {width:0, opacity:0}, {width:'80%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart07', {width:0, opacity:0}, {width:'80%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart08', {width:0, opacity:0}, {width:'50%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart09', {width:0, opacity:0}, {width:'30%', opacity:1, ease:'none', duration:1},0)
+        .fromTo('.chart11', {width:0, opacity:0}, {width:'10%', opacity:1, ease:'none', duration:1},0)
     
 })
