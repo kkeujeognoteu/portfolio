@@ -5,7 +5,7 @@
 
 .contain{ background:#000; color:#fff; }
 
-.header{ position:fixed; width:100%; height:100px; left:0; top:0; transition:all .3s; z-index:99; }
+.header{ position:fixed; width:100%; height:100px; left:0; top:0; transition:all .3s; z-index:2; }
 .header.active{ transform:translateY(-100%); background:rgba(0,0,0,.2); transition:all .3s; }
 .header > .inner{ width:100%; height:100%; margin:0 auto; padding:0 100px; display:flex; justify-content: space-between; align-items:center; box-sizing: border-box; }
 .header .logo{ position:relative; z-index:1; }
@@ -63,3 +63,13 @@ footer{ width:100%; background:#000; }
 
 .copyright{ padding:30px 0 50px; font-size:14px; color:rgba(255,255,255,.5); }
 
+
+/* 더보기 */
+.moreBtn{ margin-top:100px; }
+.moreBtn button{ position:relative; text-align:center; display:inline-block; background:#071017; color:#fff; padding:20px 0; width:250px; border-radius:50px; font-size:18px; font-weight:600; overflow:hidden; transition:all .2s linear 0s; }
+.moreBtn button:after{ content:''; position:absolute; width:20px; height:20px; background:url(../images/right-arrow.png)no-repeat; background-size:contain; font-size:15px; right:20px; top:50%; transform:translateY(-50%); opacity:0; transition:all .2s linear 0s; }
+.moreBtn button:hover{ text-indent:-20px; background:#FFBF0E }
+.moreBtn button:hover:after{ opacity: 1; }
+.moreBtn button .arrowRight{ position:absolute; width:40px; height:40px; right:30px; top:13px; background:#30404E; border-radius:100%; padding:8px; box-sizing:border-box }
+.moreBtn button .arrowRight img{ width:100%; }
+.moreBtn button .arrowRight:hover{ animation:moreBtn 1s linear; animation-iteration-count:infinite; }

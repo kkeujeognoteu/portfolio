@@ -9,16 +9,6 @@
 .character .mainTopTxt p span{ font-size:140px; line-height:1.2; }
 .character .mainTopTxt .en2 span{ font-family: 'Cormorant Infant', serif; }
 
-.character.motion .mainTopTxt{ transform:translate3d(0,0,0) skewY(0deg) translateY(-50%); overflow:hidden; }
-.character.motion .mainTopTxt p span{ animation-name:textAni; animation-duration: 1.8s; }
-.character.motion .mainTopTxt p > span{ display:inline-block; }
-.character.motion .mainTopTxt p:nth-child(2) span{ animation-duration: 1.7s; }
-.character.motion .mainTopTxt p:nth-child(3) span{ animation-duration: 1.5s; }
-@keyframes textAni{
-    0%{ opacity: 0; }
-    30%{ opacity: 0; transform:translate3d(0,-90px,0) skewY(-10deg); transform-origin:top left; }
-}
-
 .character .mainTopTxt .motion .char{ display:inline-block; animation:slide_up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)) }
 .character .mainTopTxt .motion .word[data-word="YuJin"]{ margin-left:150px }
 
@@ -38,7 +28,6 @@
 }
 
 
-
 /* 자기소개 */
 .aboutMe{ position:relative; display:flex; justify-content: center; padding:5vh 0 !important; height:100vh !important; top:0 !important; background:#000; color:#fff; }
 .aboutMe .inner{ width:80%; margin:0 auto; display:flex; justify-content: space-between }
@@ -46,7 +35,6 @@
 .aboutMe .inner .about_L:after{ content:''; position:absolute; width:1px; height:80%; background:#818181; top:55%; right:0; transform:translateY(-50%) }
 .aboutMe .inner .about_L h2{ padding-left:12vh; }
 .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:50px; font-weight:600;  }
-.aboutMe .inner .about_L h2.on{ position:absolute; left:0; top:10%; transition:.3s; }
 .aboutMe .inner .about_R{ width:50%; padding:125px 0 125px 40px; }
 .aboutMe .inner .about_R p span{ font-size:24px; line-height:2; -webkit-text-fill-color:rgba(255,255,255,0.2); -webkit-background-clip:text; background-repeat:no-repeat; background-image:linear-gradient(#fff, #fff); background-size:0% 100%; }
 
@@ -91,16 +79,6 @@
 .listTxt .company{ color:#49F9D5; font-size:16px; font-weight:500 }
 .listTxt .title{ margin-top:5px; font-size:20px; }
 .listTxt .date{ margin-top:15px; font-size:14px; color:#313030; font-weight:500; }
-
-.moreBtn{ margin-top:100px; }
-.moreBtn button{ position:relative; text-align:center; display:inline-block; background:#071017; color:#fff; padding:20px 0; width:250px; border-radius:50px; font-size:18px; font-weight:600; overflow:hidden; transition:all .2s linear 0s; }
-.moreBtn button:after{ content:''; position:absolute; width:20px; height:20px; background:url(../images/right-arrow.png)no-repeat; background-size:contain; font-size:15px; right:20px; top:50%; transform:translateY(-50%); opacity:0; transition:all .2s linear 0s; }
-.moreBtn button:hover{ text-indent:-20px; background:#FFBF0E }
-.moreBtn button:hover:after{ opacity: 1; }
-.moreBtn button .arrowRight{ position:absolute; width:40px; height:40px; right:30px; top:13px; background:#30404E; border-radius:100%; padding:8px; box-sizing:border-box }
-.moreBtn button .arrowRight img{ width:100%; }
-.moreBtn button .arrowRight:hover{ animation:moreBtn 1s linear; animation-iteration-count:infinite; }
-
 
 
 /* portfolio */
