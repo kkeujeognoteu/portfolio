@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+.wrap{ position:relative; }
+
+/*  */
+.character{ position:relative; height:100vh !important; }
+.character .mainTopTxt{ position:absolute; width:100%; left:0; top:50%; transform:translateY(-50%);text-align:center; z-index:-1 }
+.character .mainTopTxt p{ overflow:hidden; margin:8px 0; }
+.character .mainTopTxt p span{ font-size:140px; line-height:1.2; }
+.character .mainTopTxt .en2 span{ font-family: 'Cormorant Infant', serif; }
+
+.character.motion .mainTopTxt{ transform:translate3d(0,0,0) skewY(0deg) translateY(-50%); overflow:hidden; }
+.character.motion .mainTopTxt p span{ animation-name:textAni; animation-duration: 1.8s; }
+.character.motion .mainTopTxt p > span{ display:inline-block; }
+.character.motion .mainTopTxt p:nth-child(2) span{ animation-duration: 1.7s; }
+.character.motion .mainTopTxt p:nth-child(3) span{ animation-duration: 1.5s; }
+@keyframes textAni{
+    0%{ opacity: 0; }
+    30%{ opacity: 0; transform:translate3d(0,-90px,0) skewY(-10deg); transform-origin:top left; }
+}
+
+.character .mainTopTxt .motion .char{ display:inline-block; animation:slide_up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)) }
+.character .mainTopTxt .motion .word[data-word="YuJin"]{ margin-left:150px }
+
+@keyframes slide_up{
+    0%{transform:translateY(30px); opacity: 0;}
+    30%{transform:translateY(30px); opacity: 0;}
+}
+
+/* 캐릭터로 인사하는 모션 */
+.character .stage{ height:100%; background:url(../images/character.png)no-repeat 0 center; max-width:100px; margin:0 auto; }
+.character .charater_img{ position:absolute; width:450px; height:450px; left:50%; top:50%; transform:translate(-50%, -50%); animation:spinImg 10s linear infinite; }
+.character .charater_img img{ height:100%; }
+
+@keyframes spinImg{
+    0%{ transform: translate(-50%, -50%) rotate(0deg); }
+    100%{ transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+
+/* 자기소개 */
+.aboutMe{ position:relative; display:flex; justify-content: center; padding:5vh 0 !important; height:100vh !important; top:0 !important; background:#000; color:#fff; }
+.aboutMe .inner{ width:80%; margin:0 auto; display:flex; justify-content: space-between }
+.aboutMe .inner .about_L{ position:relative; width:45%; padding:45px 60px 45px 0;}
+.aboutMe .inner .about_L:after{ content:''; position:absolute; width:1px; height:80%; background:#818181; top:55%; right:0; transform:translateY(-50%) }
+.aboutMe .inner .about_L h2{ padding-left:12vh; }
+.aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:50px; font-weight:600;  }
+.aboutMe .inner .about_L h2.on{ position:absolute; left:0; top:10%; transition:.3s; }
+.aboutMe .inner .about_R{ width:50%; padding:125px 0 125px 40px; }
+.aboutMe .inner .about_R p span{ font-size:24px; line-height:2; -webkit-text-fill-color:rgba(255,255,255,0.2); -webkit-background-clip:text; background-repeat:no-repeat; background-image:linear-gradient(#fff, #fff); background-size:0% 100%; }
+
+/* 스킬 */
+.skill { position:relative; height:400px; display:flex; align-items:center; justify-content: center; margin-top:-1px; }
+.skill:after{ content:''; display:block; width:100%; height:100%; position:absolute; left:0; top:0; background:linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 5%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 95%, rgba(0,0,0,1) 100%); z-index:2; mix-blend-mode: multiply; }
+.skill ul li{ margin-bottom:16px; }
+.skill ul li:last-child{ margin-bottom:0; }
+.skill .trackA{ position:relative; height:180px; }
+.skill .trackA .track{ position:absolute; left:0; gap:16px; display:flex; animation:skill 20s linear infinite; }
+.skill .trackA .track2{ animation: skill2 20s linear infinite; transition-delay:1s; left:auto; right:0; }
+.skill .trackA .track .trackList{ width:180px; height:180px; display:flex; flex-direction: column; justify-content: center; align-items:center; background:#313030; padding:30px; box-sizing: border-box; opacity: .5; }
+.skill .trackA .track .trackList .trackImg{ width:0; height:0; padding-top:calc(100 / 1000 * 100%) }
+.skill .trackA .track .trackList .trackImg img{ width:100%; }
+.skill .trackA .track .trackList p{ text-transform: uppercase; text-align:center; margin-top:10px; }
+
+@keyframes skill{
+    0%{ transform:translateX(-50%) }
+    100%{ transform:translateX(-100%) }
+}
+
+@keyframes skill2{
+    0%{ transform:translateX(50%) }
+    100%{ transform:translateX(100%) }
+}
+
+/* circleBox */
+.circleBox{ position:relative; height:490px; overflow:hidden; }
+.circleBox .circle{ display:block; width:2500px; height:2500px; border-radius:50%; background:#fff; position:absolute; top:20%; left:50%; transform:translateX(-50%); }
+
+/* works */
+.works{ display:flex; justify-content: flex-end; background:#fff; height:100vh !important; }
+.works .inner{ width:90%; padding:60px 67px ; border-radius:50px 0 0 50px; display:flex; flex-direction: column; align-items:center; justify-content:center; }
+.works .inner h3{ font-family:"Lalezar", system-ui; font-size:100px; font-weight:500; line-height:1; text-transform: uppercase; color:#000; }
+.works .inner > p{ font-size:25px; margin-top:10px; font-weight:500; color:#000; }
+.worksBox{ margin-top:60px; overflow-x:hidden; }
+.workWrap{ display:flex; gap:20px; }
+.workWrap .workList{ width:20%; flex-shrink:0 !important; }
+.workWrap .workList .thumb{ width:100%; height:0; padding-top:calc(770/1000*100%); background:url(../images/thumb01.jpeg)no-repeat; background-size:contain; border-radius:20px; border:1px solid #d2d2d2; }
+.listTxt{ margin-top:10px; }
+.listTxt p{ color:#000; }
+.listTxt .company{ color:#49F9D5; font-size:16px; font-weight:500 }
+.listTxt .title{ margin-top:5px; font-size:20px; }
+.listTxt .date{ margin-top:15px; font-size:14px; color:#313030; font-weight:500; }
+
+.moreBtn{ margin-top:100px; }
+.moreBtn button{ position:relative; text-align:center; display:inline-block; background:#071017; color:#fff; padding:20px 0; width:250px; border-radius:50px; font-size:18px; font-weight:600; overflow:hidden; transition:all .2s linear 0s; }
+.moreBtn button:after{ content:''; position:absolute; width:20px; height:20px; background:url(../images/right-arrow.png)no-repeat; background-size:contain; font-size:15px; right:20px; top:50%; transform:translateY(-50%); opacity:0; transition:all .2s linear 0s; }
+.moreBtn button:hover{ text-indent:-20px; background:#FFBF0E }
+.moreBtn button:hover:after{ opacity: 1; }
+.moreBtn button .arrowRight{ position:absolute; width:40px; height:40px; right:30px; top:13px; background:#30404E; border-radius:100%; padding:8px; box-sizing:border-box }
+.moreBtn button .arrowRight img{ width:100%; }
+.moreBtn button .arrowRight:hover{ animation:moreBtn 1s linear; animation-iteration-count:infinite; }
+
+
+
+/* portfolio */
+.portfolio { position:relative; }
+.portfolio .portTitle{ width:100%; text-align:center; padding-top:20vh; box-sizing:border-box; }
+.portfolio .portTitle p{ font-size:220px; line-height:0.9; }
+.portfolio .portTitle .portA{ font-family:'Public Sans', sans-serif }
+.portfolio .portTitle .portB{ font-family:'Cormorant Infant', serif }
+.portfolio .portC{ display:flex; z-index:2; margin-top:18%; text-align:center; transform:translateX(-50%); }
+
+.portfolio .portBox{ width:100%; margin:0 auto; }
+.portfolio .portBox ul{ display:flex; flex-wrap:wrap; justify-content: space-between; }
+.portfolio .portBox ul li[class^=card-wedo]{ position:relative; width:450px; height:450px; margin:10vh 0; border:1px solid #000; border-radius:100%; overflow:hidden; transition:all .5s ease-out; }
+.portfolio .portBox ul li[class^=card-wedo]:hover{ border-radius:20px; overflow:hidden; transition:all .5s; }
+.portfolio .portBox ul li a{ width:100%; height:100%; }
+.portfolio .portBox ul li .portImgBox { width:100%; height:100%; }
+.portfolio .portBox ul li .portImgBox img{ width:100%; height:100%; object-fit: cover; }
+
+.portfolio .portBox ul li .port_hoverBox{ position:absolute; left:0; top:0; width:100%; height:100%; background:#ffa500; color:#fff; border-radius:20px; opacity:0; z-index:10; padding:3.125vw 2.3vw; box-sizing: border-box; transition:opacity .5s; }
+.portfolio .portBox ul li .port_hoverBox h3{ font-size:30px; }
+.portfolio .portBox ul li .port_hoverBox p{ position:absolute; bottom:20%; }
+.portfolio .portBox ul li:hover .port_hoverBox{ opacity:1; }
+.portfolio .portBox ul li .portTxtBox{ margin-top:20px; }
+.portfolio .portBox ul li .portTxtBox h3{ font-size:35px; font-weight:500; padding-bottom:50px; }
+.portfolio .portBox ul li .portTxtBox p{ color:#888; }
+.portfolio .portBox ul li.card-wedo-01{ margin-left:15vw }
+.portfolio .portBox ul li.card-wedo-02{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-03{ margin-left:15vw; }
+.portfolio .portBox ul li.card-wedo-04{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-05{ margin-left:15vw; }
+.portfolio .portBox ul li.card-wedo-06{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-07{ margin-left:15vw; }
+
+/* history */
+.mainTask{ width:100%; height:100vh; position:relative; z-index: 1; background:#000; margin-top:200px; }
+.mainTask .mainTaskWrap{ width:80%; display:flex; flex-direction: column; justify-content: center; align-items:center; height:100%; padding:50px 0; box-sizing:border-box; margin:0 auto; }
+.mainTask .mainTaskWrap h3{ font-family:"Lalezar", system-ui; font-size:70px; font-weight:500; text-align:center; line-height:1; text-transform: uppercase; color:#fff; }
+.mainTask .mainTaskWrap .mainTaskBox{ margin-top:40px; display:flex; justify-content: center; align-items:center; gap:1vw; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList{ display:flex; width:5vw; height:25vw; padding:15px; box-sizing:border-box; border:1px solid #7e7e7e; border-radius:10px; transition: all 0.3s ease-in-out; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList .Task_Img{ width:5vw; height:5vw; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList .Task_Img img{ width:100%; height:100%; object-fit: contain; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList h3{ font-size:20px; color:#fff; font-weight:500; line-height:1.5 }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active{ display:block; width:30vw; background:#ffa500; }
+ .mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active h3{ font-size:20px; font-weight:600; display:block; color:#000; }
+

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lalezar&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital@1&family=Noto+Sans+KR&family=Public+Sans&display=swap');
+
+html{ width:100%; overflow-x:hidden; overflow-y:auto; }
+html.cont::-webkit-scrollbar{ width:5px; }
+html::-webkit-scrollbar-thumb{ background-color:#091925; border-radius:10px; }
+html::-webkit-scrollbar-track{ border-radius:10px; }
+
+html, body, div, p, span, h1, h2, h3, h4, h5, h6, a, img, strong, i, ul, li, ol{ margin:0; padding:0; font-size:16px; font-family:'Noto Sans KR', sans-serif; font-weight:600; color:#fff; }
+li{ list-style:none; }
+a{ text-decoration:none; display:block; }
+button{ border:none; background:transparent; color:#fff; margin:0; cursor:pointer; }
+input, select, textarea{ padding:5px 10px; border:1px solid #f8f8f8; }
+input:focus{ outline:none; }
+
+
+/*.gsap-marker-end, .gsap-marker-start, .gsap-marker-scroller-end, .gsap-marker-scroller-start{ display: none !important; }*/
