@@ -27,6 +27,9 @@
     100%{ transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+@media(max-width:1440px){
+    .character .mainTopTxt p span{ font-size:10vw; }
+}
 
 /* 자기소개 */
 .aboutMe{ position:relative; display:flex; justify-content: center; padding:5vh 0 !important; height:100vh !important; top:0 !important; background:#000; color:#fff; }
@@ -37,6 +40,16 @@
 .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:50px; font-weight:600;  }
 .aboutMe .inner .about_R{ width:50%; padding:125px 0 125px 40px; }
 .aboutMe .inner .about_R p span{ font-size:24px; line-height:2; -webkit-text-fill-color:rgba(255,255,255,0.2); -webkit-background-clip:text; background-repeat:no-repeat; background-image:linear-gradient(#fff, #fff); background-size:0% 100%; }
+
+@media(max-width:1440px){
+    .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:2rem; }
+    .aboutMe .inner{ width:100%; padding:0 2rem; }
+    .aboutMe .inner .about_L{ width:50%; padding:2rem 0; }
+    .aboutMe .inner .about_L h2{ padding-left:2rem; }
+    .aboutMe .inner .about_R{ width:50%; padding:2rem 0 2rem 2rem; }
+    .aboutMe .inner .about_R p{ margin-top:3.3rem; }
+    .aboutMe .inner .about_R p span{ font-size:1.3rem; }
+}
 
 /* 스킬 */
 .skill { position:relative; height:400px; display:flex; align-items:center; justify-content: center; margin-top:-1px; }
@@ -59,6 +72,10 @@
 @keyframes skill2{
     0%{ transform:translateX(50%) }
     100%{ transform:translateX(100%) }
+}
+
+@media(max-width:1440px){
+    .skill .trackA .track2{ overflow:hidden }
 }
 
 /* circleBox */

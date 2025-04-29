@@ -3,10 +3,7 @@
 .subPg{ position:relative; }
 /* .subPg span, .subPg p, .subPg h2, .subPg h3, .subPg h4, .subPg h5, .subPg h6, .subPg strong, .subPg li, .subPg a{ color:#000; } */
 
-/* .sub_port .pin-spacer{ margin:0 !important; padding:0 !important; height:0 !important; } */
 
-.sub_port{ position:relative; width:100%; }
-.subTopslideWrap{ position:relative }
 .subTopSlide{ position:relative; width:100vw; height:100vh; background:#000; box-sizing: border-box; display:flex; justify-content:center; align-items:center;}
 .subTopSlide .subTitle{ position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); transition:.3s ease-out;  z-index:1; }
 .subTopSlide .subTitle .char{ font-family:"Lalezar", system-ui; font-size:120px; color:#ffa500; font-weight:700; letter-spacing:10px; text-transform: uppercase; }
@@ -89,10 +86,10 @@
 
 /*  about - 소개 */
 .aboutInfo{ width:100%; height:100vh; display:flex; align-items:center; }
-.infInner{ width:1440px; height:100%; margin:0 auto; }
+.Inner{ width:1440px; height:100%; margin:0 auto; }
 .aboutFix{ display:flex; align-items:center; gap:40px; height:100%; }
 .aboutTitle_L{ width:40%; padding-right:40px; }
-.aboutTitle_L h2{ color:#000;  font-size:40px; font-weight:700; line-height: 1.3; }
+.aboutTitle_L h3{ color:#000;  font-size:40px; font-weight:700; line-height: 1.3; }
 .aboutTitle_L .aboutImg.motion h2{ animation:fadeIn_img .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)); transition:.1s }
 
 @keyframes fadeIn_img{
@@ -101,17 +98,28 @@
 }
 .aboutTitle_L .aboutImg img{ width:100%; height:100%; object-fit: contain; }
 .aboutTitle_R{ position:relative; width:60%; height:100vh; }
-.aboutTitle_R .titleList{ position:absolute; width:100%; left:0; top:0; top:50%; transform:translateY(-50%); opacity: 1; height:100%; align-content:center; }
-.aboutTitle_R .titleList h2{ color:#000; font-size:28px; font-weight:700; line-height:1.4; letter-spacing:-1px; }
+.aboutTitle_R .aboutList{ position:absolute; width:100%; left:0; top:0; top:50%; transform:translateY(-50%); opacity: 1; height:100%; align-content:center; background:#fff; }
+.aboutTitle_R .titleList h2{ color:#f19c00; font-size:28px; font-weight:700; line-height:1.4; letter-spacing:-1px; }
 .aboutTitle_R .titleList p{ color:#7C7C7C; font-weight:400; line-height:1.8; word-break:keep-all; }
 .aboutTitle_R .titleList p { margin-top:30px; }
-.aboutTitle_R .titleList p span{ display:inline-block; font-size: 18px;  color:#7C7C7C; font-weight:500; }
+.aboutTitle_R .titleList p span{ display:inline-block; font-size: 18px;  color:#ffa500; font-weight:600; }
+.aboutTitle_R .titleList p strong{ font-weight:600; color:#239c83; font-style:italic; font-size:16px; }
 
+.aboutTitle_R .proflie{ background:#fff; }
+.aboutTitle_R .proflie .list li span{ color:#7C7C7C; font-size:14px; font-weight:400; }
+.aboutTitle_R .proflie .portWrap{ display:flex; flex-wrap:wrap; gap:20px; }
+.aboutTitle_R .proflie .list { width:48%; }
+.aboutTitle_R .proflie .list h4{ color:#239c83; font-weight:600; font-size:16px; margin-bottom:5px; font-style:italic; text-transform: uppercase; }
+.aboutTitle_R .proflie .list span{ display:inline-block }
+.aboutTitle_R .proflie .list .dl{ width:calc(100% - 17vw) }
+.aboutTitle_R .proflie .list .dl_01{ width:calc(100% - 14vw) }
+.aboutTitle_R .proflie .list:nth-child(4){ margin-top:-65px }
+.aboutTitle_R .proflie .list:nth-child(6){ margin-top:-50px }
 
 /* about -  */
 .aboutScrollX{ position:relative; width:100vw; }
 .aboutScrollX .scrollXCont{ position:sticky; overflow:hidden; top:0; width:100%; height:100vh; display:flex; align-items:center; }
-.aboutScrollX .scrollXWrap{ display:flex; align-items:center; justify-content: center; width:200vw; }
+.aboutScrollX .scrollXWrap{ display:flex; align-items:center; width:200vw; }
 .sclXTxt{ display:flex; flex-direction: column; }
 .sclXTxt .personlity{ display:flex; margin-left:10vw }
 .sclXTxt .personlity p{ display:flex; flex-direction: column; white-space:nowrap; margin-right:2vw;  }
@@ -119,7 +127,7 @@
 .sclXTxt .personlity p .perEn{ font-size:3.6vw; color:#c9c9c9; }
 
 /* about - tool */
-.toolCon{ width:100vw; height:100vh; position:relative; margin:10vh 0; }
+.toolCon{ width:100vw; height:100vh; position:relative; padding:10rem 0; }
 .toolCon .toolConWrap{ height:100%; padding:0 7vw; align-content:center; }
 .toolCon .toolConWrap h3{ font-family:"Lalezar", system-ui; font-size:80px; font-weight:600; text-align:center; text-transform: uppercase; letter-spacing: 2px; }
 .toolCon .toolConWrap > p{ font-size:20px; font-weight:500; text-align:center; }
@@ -132,10 +140,8 @@
 .toolBox .toolCard:nth-child(4){ transform:translate(-60px,-10px) rotate(2deg) }
 
 .toolBox .toolCard.active{ z-index:1 }
-:where()
-.toolBox .toolCard.active:nth-child(1){ transform:translateX(30px) rotate(0) }
+.toolBox .toolCard.active:nth-child(1){ transform:translateX(30px) rotate(0deg) }
 .toolBox .toolCard.active:nth-child(2){ transform:translateX(6px) rotate(0deg) }
-.toolBox .toolCard.active:nth-child(2):has(.toolCard:nth-child(1)) { transform:translateX(15px) }
 .toolBox .toolCard.active:nth-child(3){ transform:translateX(-24px) rotate(0deg); }
 .toolBox .toolCard.active:nth-child(4){ transform:translateX(-36px) rotate(0) }
 
@@ -143,8 +149,8 @@
 .toolBox .toolCard.active:nth-child(2) + .toolCard:nth-child(3){ transform:translateX(-10px) rotate(-3deg) }
 .toolBox .toolCard.active:nth-child(3) + .toolCard:nth-child(4){transform:translateX(-35px) rotate(3deg)}
 
-.toolBox .toolCard .list{ padding:50px 0 100px; }
-.toolBox .toolCard ul li + li{ margin-top:25px; }
+.toolBox .toolCard ul{ padding:50px 0 100px; }
+.toolBox .toolCard ul > li + li{ margin-top:25px; }
 .toolBox .toolCard ul li p{ color:#000; font-size:20px; font-weight:500; line-height:1.2 }
 .toolBox .toolCard ul li p em{ color:#000; font-size:14px; float:right; margin-top:3px; }
 .toolBox .toolCard ul li .useTool { height:10px; border-radius:50px; background:#ededed; margin:7px 0; }
@@ -161,9 +167,77 @@
 .toolBox .toolCard ul li .useTool .chart09{ width:30% }
 .toolBox .toolCard ul li .useTool .chart11{ width:10% }
 
-
-.toolBox .toolCard ul li .cardTxt p{ font-size:16px; color:#7C7C7C }
+.toolBox .toolCard ul li .cardTxt{ margin-top:5px; }
+.toolBox .toolCard ul li .cardTxt p{ position:relative; font-size:14px; color:#7C7C7C; padding-left:10px; }
+.toolBox .toolCard ul li .cardTxt p:after{ content:''; position:absolute; width:3px; height:3px; background:#7C7C7C; border-radius:100%; left:0; top:8px; }
+.toolBox .toolCard ul li .cardTxt p + p{ margin-top:5px; }
 
 .toolBox .toolCard .toolTitle{ position:absolute; left:50%; bottom:30px; transform:translateX(-50%); }
 .toolBox .toolCard .toolTitle h4{ color:#000; text-align:center; text-transform: uppercase; font-family:"Lalezar", system-ui; font-size:30px; font-weight:600; line-height:1; }
+.toolBox .toolCard .toolTxt{ display:none; position:absolute; width:70%; left:50%; transform:translateX(-50%); padding:10px 15px; border-radius:10px; box-shadow:3px 2px 7px rgba(0,0,0,.4); background:#fff; }
+.toolBox .toolCard .toolTxt p{ position:relative; color:#7C7C7C; font-size:14px; padding-left:10px; word-break:keep-all; }
+.toolBox .toolCard .toolTxt p:after{ content:''; position:absolute; width:3px; height:3px; background:#7C7C7C; border-radius:100%; left:0; top:8px; }
+.toolBox .toolCard .toolTxt p + p{ margin-top:5px; }
+.toolBox .toolCard.active li.active .toolTxt{ display:block; }
 
+/* hobby */
+.hobby{ position:relative; width:100%; height:100vh; }
+.hobby .hobbyWrap{ width:80%; height:100%; margin: auto; padding:5rem 0; box-sizing:border-box; }
+.hobby .hobbyWrap h2{ position:absolute; color:#fff; font-size:380px; text-align:center; font-weight:600; font-family:'Cormorant Infant', serif; top:50%; left:50%; transform:translate(-50%, -50%); }
+.hobby .hobbyWrap .hobbyCon { position:relative; margin-top:5rem; }
+.hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ position:absolute; width:500px; height:350px; top:0; left:50%; background:#fff; padding:25px 25px 75px; border:1px solid #7C7C7C }
+.hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(1){ transform:translateX(-50%) rotate(5deg) }
+.hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(2){ transform:translateX(-50%) rotate(-5deg) }
+.hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(3){ transform:translateX(-50%) rotate(0deg) }
+.hobby .hobbyWrap .hobbyCon .hobbyImg img{ width:100%; height:100%; object-fit: cover; }
+.hobby .hobbyWrap .hobbyCon .hobbyImg div{ margin-top:15px; }
+.hobby .hobbyWrap .hobbyCon .hobbyImg span{ font-size:14px; color:#000; padding-right:15px; }
+
+/* QNA */
+.qna{ width:100%; }
+.qnaWrap{ padding:5rem 0; display:flex; align-items:center; justify-content: center; flex-direction:column; box-sizing:border-box; width:1440px; margin:auto; }
+.qnaWrap h2{ font-size:80px; }
+.qnaWrap table{ border-collapse:collapse; width:100%; max-width:1200px; margin:5rem 0; background:#4b4b4b }
+.qnaWrap table tr{ border-bottom:1px solid #c9c9c9 }
+.qnaWrap table tr:first-child{ border-top:1px solid #c9c9c9 }
+.qnaWrap table td{ padding:10px 15px; width:100%; box-sizing:border-box; }
+.qnaWrap table .question{ cursor:pointer; }
+.qnaWrap table .question td{ display:flex; align-items:center; }
+.qnaWrap table .question .pluse{ margin-left:auto; }
+.qnaWrap table .answer{ background:#777; overflow:hidden; height:0; padding:0; opacity:0; display:block; }
+.qnaWrap table .answer span{ font-weight:400 }
+.qnaWrap table .answer span strong{ font-weight:600; color:#ffa500 }
+
+/* view more */
+.viewMore{ width:100%; height:100vh; }
+.viewMore .viewMoreWrap{ width:1440px; margin:auto; padding:5rem 0; }
+.viewMore .viewMoreWrap h2{ font-size:100px; text-transform: uppercase; color:#fff; font-family:"Lalezar", system-ui; font-weight:600 }
+.viewBox{ position:relative; display:flex; justify-content:flex-end; margin-top:4rem; gap:3rem; }
+.viewBox .viewItem{ position:relative; background:#28bc9e; width:200px; height:200px; border-radius:10px; }
+.viewBox .viewItem:hover{ background: #ffa500; transition:.5s; }
+.viewBox .viewItem:after{ content:''; position:absolute; width:1px; height:10rem; background:#7C7C7C; bottom:-10rem; left:50%; transform:translateX(-50%); }
+.viewBox .viewItem.item01{ margin-right:auto; }
+.viewBox .viewItem.item02{ margin-top:8rem; }
+.viewBox .viewItem.item03{ margin-top:4rem; }
+.viewBox .viewItem a{ display:flex; justify-content:center; width:100%; height:100%; }
+.viewBox .viewItem a p{ align-content: center; text-align:center; }
+
+.strength{ position:relative; height:10rem; padding-bottom:15rem }
+.strengthList{ display:flex; align-items:center; justify-content:flex-start; padding:.5rem 0; }
+.strengthList > div{ position:absolute; display:flex; align-items:center; justify-content:flex-start; padding:.5rem 0; background:#fff; bottom:17rem; left:-50px; }
+.strengthList > div:nth-child(1){ transform:rotate(-7deg) }
+.strengthList > div:nth-child(2){ transform:rotate(7deg); z-index:1 }
+.strengthList > div:nth-child(1) ul{ animation: strengh01 20s linear infinite }
+.strengthList > div:nth-child(2) ul{ animation: strengh02 20s linear infinite }
+.strength ul{ display:flex; justify-content: flex-start; align-items:center; gap:20px; padding:20px; }
+.strength ul li{ font-size:40px; font-weight:600; color:#000; white-space:nowrap; }
+
+
+@keyframes strengh01{
+    0%{ transform:translate3d(0, 0, 0); }
+    100%{ transform:translate3d(100%, 0, 0); }
+}
+@keyframes strengh02{
+    0%{ transform:translate3d(0, 0, 0); }
+    100%{ transform:translate3d(-100%, 0, 0); }
+}
