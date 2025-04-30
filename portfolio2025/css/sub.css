@@ -194,8 +194,8 @@
 .hobby .hobbyWrap .hobbyCon .hobbyImg span{ font-size:14px; color:#000; padding-right:15px; }
 
 /* QNA */
-.qna{ width:100%; }
-.qnaWrap{ padding:5rem 0; display:flex; align-items:center; justify-content: center; flex-direction:column; box-sizing:border-box; width:1440px; margin:auto; }
+.qna{ width:100%; height:100vh; display:flex; }
+.qnaWrap{ height:100%; display:flex; align-items:center; justify-content: center; flex-direction:column; box-sizing:border-box; width:1440px; margin:auto; }
 .qnaWrap h2{ font-size:80px; }
 .qnaWrap table{ border-collapse:collapse; width:100%; max-width:1200px; margin:5rem 0; background:#4b4b4b }
 .qnaWrap table tr{ border-bottom:1px solid #c9c9c9 }
@@ -209,10 +209,11 @@
 .qnaWrap table .answer span strong{ font-weight:600; color:#ffa500 }
 
 /* view more */
-.viewMore{ width:100%; height:100vh; }
-.viewMore .viewMoreWrap{ width:1440px; margin:auto; padding:5rem 0; }
+.viewMore{ width:100%; }
+.viewMore .viewMoreWrap{ width:1440px; height:70vh; margin:auto; padding:5rem 0; }
 .viewMore .viewMoreWrap h2{ font-size:100px; text-transform: uppercase; color:#fff; font-family:"Lalezar", system-ui; font-weight:600 }
-.viewBox{ position:relative; display:flex; justify-content:flex-end; margin-top:4rem; gap:3rem; }
+.viewMore .viewMoreWrap > p{ font-size:20px; color:#fff; }
+.viewBox{ position:relative; display:flex; justify-content:flex-end; margin-top:7rem; gap:3rem; }
 .viewBox .viewItem{ position:relative; background:#28bc9e; width:200px; height:200px; border-radius:10px; }
 .viewBox .viewItem:hover{ background: #ffa500; transition:.5s; }
 .viewBox .viewItem:after{ content:''; position:absolute; width:1px; height:10rem; background:#7C7C7C; bottom:-10rem; left:50%; transform:translateX(-50%); }
@@ -222,16 +223,19 @@
 .viewBox .viewItem a{ display:flex; justify-content:center; width:100%; height:100%; }
 .viewBox .viewItem a p{ align-content: center; text-align:center; }
 
-.strength{ position:relative; height:10rem; padding-bottom:15rem }
+.strength{ position:relative; }
 .strengthList{ display:flex; align-items:center; justify-content:flex-start; padding:.5rem 0; }
-.strengthList > div{ position:absolute; display:flex; align-items:center; justify-content:flex-start; padding:.5rem 0; background:#fff; bottom:17rem; left:-50px; }
-.strengthList > div:nth-child(1){ transform:rotate(-7deg) }
-.strengthList > div:nth-child(2){ transform:rotate(7deg); z-index:1 }
+.strengthList > div{ position:absolute; display:flex; align-items:center; justify-content:flex-start; width:110vw; background:#fff; }
+.strengthList > div:hover{ background:#222; transition:.5s }
+.strengthList > div:hover li{ color:#fff }
+.strengthList > div:hover li:after{ background:#fff }
+.strengthList > div:nth-child(1){ transform:rotate(-7deg); left:-10%; }
+.strengthList > div:nth-child(2){ transform:rotate(7deg); z-index:1;  right:-10%; }
 .strengthList > div:nth-child(1) ul{ animation: strengh01 20s linear infinite }
 .strengthList > div:nth-child(2) ul{ animation: strengh02 20s linear infinite }
-.strength ul{ display:flex; justify-content: flex-start; align-items:center; gap:20px; padding:20px; }
-.strength ul li{ font-size:40px; font-weight:600; color:#000; white-space:nowrap; }
-
+.strength ul{ display:flex; justify-content: flex-start; align-items:center; padding:20px; }
+.strength ul li{ position:relative; font-size:40px; font-weight:600; color:#000; white-space:nowrap; padding-left:20px; margin-left:20px; }
+.strength ul li:after{ content:''; position:absolute; width:10px; height:10px; border-radius:100%; background:#000; left:0; top:50%; transform:translateY(-50%) }
 
 @keyframes strengh01{
     0%{ transform:translate3d(0, 0, 0); }
