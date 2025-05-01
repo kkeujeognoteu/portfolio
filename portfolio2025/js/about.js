@@ -80,7 +80,7 @@ $(document).ready(function () {
 
         scrollChart = gsap.timeline({
             scrollTrigger:{
-                trigger:'.toolCon',
+                trigger:'.projectTool',
                 start:'top top',
                 end:'bottom bottom',
                 scrub:1,

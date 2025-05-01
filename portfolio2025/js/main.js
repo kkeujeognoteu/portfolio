@@ -128,8 +128,8 @@ $(function(){
 
     taskLists.forEach((item) => {
         item.addEventListener('mouseenter', () => {
-        taskLists.forEach((el) => el.classList.remove('active')); // 모두 비활성화
-        item.classList.add('active'); // 현재 hovered 요소만 활성화
+            taskLists.forEach((el) => el.classList.remove('active')); // 모두 비활성화
+            item.classList.add('active'); // 현재 hovered 요소만 활성화
         });
 
         item.addEventListener('mouseleave', () => {
