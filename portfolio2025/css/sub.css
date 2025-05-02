@@ -111,7 +111,7 @@
 
 /* about - tool */
 .toolBox{ margin-top:6.5rem; position:relative; display:flex; gap:40px; }
-.toolBox .toolCard{ width:25%; background:#fff; padding:30px 40px; border-radius: 20px; border:1px solid #000; cursor:pointer; transition:all .3s ease; }
+.toolBox .toolCard{ width:25%; background:#fff; padding:30px 40px; border-radius: 20px; border:1px solid #000; cursor:pointer; transition:all .3s ease; box-sizing:border-box; }
 
 .toolBox .toolCard:nth-child(1){ transform:translateX(35px) rotate(-3deg) }
 .toolBox .toolCard:nth-child(2){ transform:translate(10px,-6px) rotate(3deg) }
@@ -273,7 +273,20 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
 
 @media(max-width:1080px){
 
-    .aboutScrollX .scrollXCont{ height:auto; }
+    /* about */
+    .aboutFix{ flex-direction:column; }
+    
+    .sclXTxt .personlity p span{ font-size:10rem; }
+    .aboutScrollX .scrollXCont{  }
+    
+
+    /* tool */
+    .projectTool{ height:auto; }
+    .toolBox{ flex-direction: column; margin-top:3rem; }
+    .toolBox .toolCard{ width:100%; }
+    .toolBox .toolCard.active:nth-child(1), .toolBox .toolCard:nth-child(1), .toolBox .toolCard.active:nth-child(2), .toolBox .toolCard.active:nth-child(2), .toolBox .toolCard:nth-child(2), .toolBox .toolCard.active:nth-child(1) + .toolCard:nth-child(2), .toolBox .toolCard:nth-child(3), .toolBox .toolCard.active:nth-child(3), .toolBox .toolCard.active:nth-child(3) + .toolCard:nth-child(4), .toolCard:nth-child(4), .toolBox .toolCard:nth-child(4){ transform:translateX(0) rotate(0) }
+    .toolBox .toolCard ul{ padding:2rem 0 4rem; }
+
     /* story */ 
     .story_project .inner{ margin-top:0; }
     .proJ_Cont{ margin-top:3rem; gap:3rem; }
@@ -283,6 +296,17 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
 }
 
 @media(max-width:780px){
+
+    .aboutTitle_L{ padding-right:0; }
+    .aboutTitle_L, .aboutTitle_R{ width:100%; }
+    .aboutFix{ gap:2rem }
+
+    .hobby .hobbyWrap h2{ font-size:7rem; }
+    .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ width:14rem; }
+
+    .strength ul li{ font-size:1rem }
+
+    /* stroy */
     .story_project{ height:auto; padding:3rem 0 5rem; }
     .story .storyWrap{ padding:0 1rem; }
     .storyBox .storyLst{ width:15rem; margin:2rem 0; }
@@ -297,5 +321,6 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
 }
 
 @media(max-width:380px){
+
     .storyBox .storyLst span{ font-size:0.88rem; }
 }

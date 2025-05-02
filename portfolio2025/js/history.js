@@ -1,11 +1,11 @@
 $(document).ready(function () {
     //서브페이지 메인 타이틀
     $('.subTopSlide').addClass('active');
-    initGsapScroll02();
+    initGsapScroll03();
 });
 
 
-function initGsapScroll02(){
+function initGsapScroll03(){
     if(window.innerWidth >= window.innerHeight){
         const storyScroll = document.querySelector('.storyWrap'); // 스크롤할 요소
         storyScroll.style.height = `${storyScroll.length * 100}vw`
