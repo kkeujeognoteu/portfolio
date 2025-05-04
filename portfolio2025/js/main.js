@@ -1,6 +1,5 @@
 
 $(function(){
-
     // gsap
     gsap.registerPlugin(ScrollTrigger);
 

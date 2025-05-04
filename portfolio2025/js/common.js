@@ -12,6 +12,8 @@ $(function(){Splitting();})
 
 
 /* menu */
+
+
 let header = document.querySelector('.header');
 let hambNav = document.querySelector('.hambNav');
 let body = document.body;
@@ -27,4 +29,13 @@ hambNav.addEventListener('click', function(e){
     }
 })
 
-
+let preScroll = 0;
+window.addEventListener('scroll', function(){
+    let headScrollY = window.scrollY;
+    if(preScroll < headScrollY){
+        header.classList.remove('scroll')
+    }else{
+        header.classList.add('scroll')
+    }
+    preScroll = headScrollY
+})

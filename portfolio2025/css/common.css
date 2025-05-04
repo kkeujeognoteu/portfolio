@@ -4,11 +4,11 @@
 .mobile{ display:none; }
 
 /* content */
-.cont01{ position:relative; width:100vw; height:100vh; display:flex; align-items:center; justify-content: center; box-sizing:border-box; }
+.cont01{ position:relative; width:100%; height:100vh; display:flex; align-items:center; justify-content: center; box-sizing:border-box; }
 .cont01 .inner{ max-width:1700px; width:100%; height:100%; }
 .cont01 .inner .contWrap{ height:100%; display:flex; align-items:center; justify-content: center; }
 
-.cont02{ position:relative; width:100vw; display:flex; justify-content: center; }
+.cont02{ position:relative; width:100%; display:flex; justify-content: center; }
 .cont02 .inner{ max-width:1700px; width:100%; }
 
 /* font-family 종류 */
@@ -32,7 +32,7 @@
 
 
 /* header */
-.header{ position:fixed; width:100vw; height:100px; left:0; top:0; transition:all .3s; z-index:2; }
+.header{ position:fixed; width:100%; height:100px; left:0; top:0; transition:all .3s; z-index:2; }
 .header.active{ transform:translateY(-100%); background:rgba(0,0,0,.2); transition:all .3s; }
 .header .inner{ width:100%; height:100%; margin:0 auto; padding:0 7rem; display:flex; justify-content: space-between; align-items:center; box-sizing: border-box; }
 .header .logo{ position:relative; z-index:1; }
@@ -90,7 +90,7 @@
 /* 서브페이지 */
 .subPg{ position:relative; }
 
-.subTopSlide{ position:relative; width:100vw; height:100vh; background:#000; box-sizing: border-box; display:flex; justify-content:center; align-items:center;}
+.subTopSlide{ position:relative; width:100%; height:100vh; background:#000; box-sizing: border-box; display:flex; justify-content:center; align-items:center;}
 .subTopSlide .subTitle{ position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); transition:.3s ease-out;  z-index:1; }
 .subTopSlide .subTitle .char{ font-family:"Lalezar", system-ui; font-size:8rem; color:#ffa500; font-weight:700; letter-spacing:10px; text-transform: uppercase; }
 .subTopSlide .subTitle.motion .char{ display:inline-block; animation:slide_up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)) }

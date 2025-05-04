@@ -72,7 +72,7 @@ function initGsapScroll03(){
         setInterval(nextImage, 3000); // 3초마다 전환
 
         /* carrer */
-        let qna_Q = document.querySelectorAll('.carrTitle');
+        let qna_Q = document.querySelectorAll('.carrerLst');
         let qna_A = document.querySelectorAll('.carrDropdown');
     
         qna_Q.forEach((item, index)=>{
@@ -83,8 +83,8 @@ function initGsapScroll03(){
                     gsap.to(el,{
                         height:0,
                         opacity:0,
-                        paddingTop:0,
-                        paddingBottom:0,
+                        // paddingTop:0,
+                        // paddingBottom:0,
                         duration:0.3,
                         ease:'power2.inOut'
                     })
@@ -104,8 +104,8 @@ function initGsapScroll03(){
                     {
                         height:0,
                         opacity:0,
-                        paddingTop:0,
-                        paddingBottom:0
+                        // paddingTop:0,
+                        // paddingBottom:0
                     },
                     {
                         height:height,

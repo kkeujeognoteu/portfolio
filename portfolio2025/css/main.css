@@ -85,9 +85,8 @@
 /* works */
 .works{ display:flex; justify-content: flex-end; background:#fff; height:100vh !important; }
 .works .inner{ width:90%; padding:60px 67px ; border-radius:50px 0 0 50px; display:flex; flex-direction: column; align-items:center; justify-content:center; }
-.works .inner h3{ font-family:"Lalezar", system-ui; font-size:100px; font-weight:500; line-height:1; text-transform: uppercase; color:#000; }
 .works .inner > p{ font-size:25px; margin-top:10px; font-weight:500; color:#000; }
-.worksBox{ margin-top:60px; overflow-x:hidden; }
+.worksBox{ margin-top:60px; }
 .workWrap{ display:flex; gap:20px; }
 .workWrap .workList{ width:20%; flex-shrink:0 !important; }
 .workWrap .workList .thumb{ width:100%; height:0; padding-top:calc(770/1000*100%); background:url(../images/thumb01.jpeg)no-repeat; background-size:contain; border-radius:20px; border:1px solid #d2d2d2; }
@@ -101,7 +100,7 @@
 /* portfolio */
 .portfolio { position:relative; }
 .portfolio .portTitle{ width:100%; text-align:center; padding-top:20vh; box-sizing:border-box; }
-.portfolio .portTitle p{ font-size:220px; line-height:0.9; }
+.portfolio .portTitle p{ font-size:11rem; line-height:0.9; }
 .portfolio .portTitle .portA{ font-family:'Public Sans', sans-serif }
 .portfolio .portTitle .portB{ font-family:'Cormorant Infant', serif }
 .portfolio .portC{ display:flex; z-index:2; margin-top:18%; text-align:center; transform:translateX(-50%); }
