@@ -16,6 +16,13 @@
 </head>
 <body>
     <div class="wrap">
+        <!-- <div id="mouseCursor" class="cursorCircle ">
+            <div class="mouse-cursor-icon"></div>
+            <svg height="100%" width="100%" viewBox="0 0 100 100">
+                <circle class="main-circle" cx="50" cy="50" r="40"></circle>
+            </svg>
+            <span class="mouse-cursor-text"><span></span></span>
+        </div> -->
         <div class="header">
             <div class="inner">
                 <h1 class="logo">
@@ -28,11 +35,10 @@
                     <div class="navBox ">
                         <div class="inner">
                             <ul>
-                                <li><a href="../index.html">Home</a></li>
-                                <li><a href="./sub/about.html">About me</a></li>
-                                <li><a href="./sub/portfolio.html">Portfolio</a></li>
-                                <li><a href="./sub/history.html">History</a></li>
-                                <li><a href="">Contact Me</a></li>
+                                <li><a href="index.html" class=" animate" data-animate="motion" data-splitting>Home</a></li>
+                                <li><a href="./sub/about.html" class=" animate" data-animate="motion" data-splitting>About me</a></li>
+                                <li><a href="./sub/portfolio.html" class=" animate" data-animate="motion" data-splitting>Portfolio</a></li>
+                                <li><a href="" class=" animate" data-animate="motion" data-splitting>Contact Me</a></li>
                             </ul>
                         </div>
                     </div>
@@ -153,7 +159,7 @@
                     
                     <div class="works">
                         <div class="inner">
-                            <h3 class="font_Cor contTit font_black">works</h3>
+                            <h3>works</h3>
                             <p>포트폴리오를 통해 어떤 프로젝트를 해왔는지 만나보세요</p>
                             <div class="swiper worksBox">
                                 <div class="workWrap">
@@ -324,52 +330,46 @@
                 </div>
                 <div class="mainTask">
                     <div class="mainTaskWrap">
-                        <h3 class="font_Cor contTit">What I can do </h3>
-                        <p class="contSubTit">내가 작업할 수 있는 작업</p>
+                        <h3>Main Work </h3>
                         <div class="mainTaskBox">
                             <div class="mainTaskList">
-                                <h3>홈페이지</h3>
-                                <div class="whatDo_Txt">
-                                    <p>디자인에 시안에 맞게 웹 퍼블리싱을 작업합니다.</p>
-                                    <div class="Task_Img">
-                                        <img src="images/mainIcon03.png" alt="">
-                                    </div>
+                                <div class="Task_Img">
+                                    <img src="images/mainIcon03.png" alt="">
+                                </div>
+                                <div class="mainTask_textBox">
+                                    <h3>홈페이지</h3>
                                 </div>
                             </div>
                             <div class="mainTaskList">
-                                <h3>반응형 홈페이지</h3>
-                                <div class="whatDo_Txt">
-                                    <p>스마트 기기의 해상도에 따라 <span>@media 쿼리를 사용하여 width 값을 1440px, 1080px, 780px, 380px</span> 사이즈의 홈페이지를 반응형으로 작업합니다.</p>
-                                    <div class="Task_Img">
-                                        <img src="images/mainIcon02.png" alt="">
-                                    </div>
+                                <div class="Task_Img">
+                                    <img src="images/mainIcon02.png" alt="">
+                                </div>
+                                <div class="mainTask_textBox">
+                                    <h3>반응형 홈페이지</h3>
                                 </div>
                             </div>
                             <div class="mainTaskList">
-                                <h3>모바일 웹/앱</h3>
-                                <div class="whatDo_Txt">
-                                    <p>모바일이 아닌 적응형으로 퍼블리싱을 작업합니다.</p>
-                                    <div class="Task_Img">
-                                        <img src="images/mainIcon04.png" alt="">
-                                    </div>
+                                <div class="Task_Img">
+                                    <img src="images/mainIcon04.png" alt="">
+                                </div>
+                                <div class="mainTask_textBox">
+                                    <h3>모바일 웹/앱</h3>
                                 </div>
                             </div>
                             <div class="mainTaskList">
-                                <h3>유지보수</h3>
-                                <div class="whatDo_Txt">
-                                    <p>홈페이지 퍼블리싱 작업중 이거나 수정사항이나 문제가 발생했을 시 정확하고 신속하게 해결을 합니다.</p>
-                                    <div class="Task_Img">
-                                        <img src="images/mainIcon01.png" alt="">
-                                    </div>
+                                <div class="Task_Img">
+                                    <img src="images/mainIcon01.png" alt="">
+                                </div>
+                                <div class="mainTask_textBox">
+                                    <h3>유지보수</h3>
                                 </div>
                             </div>
                             <div class="mainTaskList">
-                                <h3>고도몰 솔루션</h3>
-                                <div class="whatDo_Txt">
-                                    <p>고도몰을 이용한 프로젝트를 단기간에 작업한 이력이 있습니다.</p>
-                                    <div class="Task_Img">
-                                        <img src="images/mainIcon05.png" alt="">
-                                    </div>
+                                <div class="Task_Img">
+                                    <img src="images/mainIcon05.png" alt="">
+                                </div>
+                                <div class="mainTask_textBox">
+                                    <h3>고도몰</h3>
                                 </div>
                             </div>
                         </div>
@@ -378,13 +378,18 @@
             </div>
             <footer>
                 <div class="footerWrap">
-                    <h2 class="font_Cor contTit">Contact Me</h2>
-                    <div class="contactBox">
-                        <p class="email">
-                            <span>e-mail</span>
-                            <a href="mailto:smallyoung24@naver.com">smallyoung24@naver.com</a>
-                        </p>
-                        <p class="phone"><span>phone</span><a href="tel:01062066615">010.6206.6615</a></p>
+                    <div class="contact">
+                        <div class="contactWrap">
+                            <h2>Contact Me</h2>
+                            <div class="contactBox">
+                                <p class="email">
+                                    <span>e-mail</span>
+                                    <a href="mailto:smallyoung24@naver.com">smallyoung24@naver.com</a>
+                                </p>
+                                <p class="phone"><span>phone</span><a href="tel:01062066615">010.6206.6615</a></p>
+        
+                            </div>
+                        </div>
                     </div>
                     <p class="copyright">&copy;2025 YuiJin All Right Reserved</p>
                 </div>

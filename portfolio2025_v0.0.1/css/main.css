@@ -9,6 +9,16 @@
 .character .mainTopTxt p span{ font-size:140px; line-height:1.2; }
 .character .mainTopTxt .en2 span{ font-family: 'Cormorant Infant', serif; }
 
+.character.motion .mainTopTxt{ transform:translate3d(0,0,0) skewY(0deg) translateY(-50%); overflow:hidden; }
+.character.motion .mainTopTxt p span{ animation-name:textAni; animation-duration: 1.8s; }
+.character.motion .mainTopTxt p > span{ display:inline-block; }
+.character.motion .mainTopTxt p:nth-child(2) span{ animation-duration: 1.7s; }
+.character.motion .mainTopTxt p:nth-child(3) span{ animation-duration: 1.5s; }
+@keyframes textAni{
+    0%{ opacity: 0; }
+    30%{ opacity: 0; transform:translate3d(0,-90px,0) skewY(-10deg); transform-origin:top left; }
+}
+
 .character .mainTopTxt .motion .char{ display:inline-block; animation:slide_up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)) }
 .character .mainTopTxt .motion .word[data-word="YuJin"]{ margin-left:150px }
 
@@ -27,9 +37,7 @@
     100%{ transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-@media(max-width:1440px){
-    .character .mainTopTxt p span{ font-size:10vw; }
-}
+
 
 /* 자기소개 */
 .aboutMe{ position:relative; display:flex; justify-content: center; padding:5vh 0 !important; height:100vh !important; top:0 !important; background:#000; color:#fff; }
@@ -38,9 +46,9 @@
 .aboutMe .inner .about_L:after{ content:''; position:absolute; width:1px; height:80%; background:#818181; top:55%; right:0; transform:translateY(-50%) }
 .aboutMe .inner .about_L h2{ padding-left:12vh; }
 .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:50px; font-weight:600;  }
+.aboutMe .inner .about_L h2.on{ position:absolute; left:0; top:10%; transition:.3s; }
 .aboutMe .inner .about_R{ width:50%; padding:125px 0 125px 40px; }
 .aboutMe .inner .about_R p span{ font-size:24px; line-height:2; -webkit-text-fill-color:rgba(255,255,255,0.2); -webkit-background-clip:text; background-repeat:no-repeat; background-image:linear-gradient(#fff, #fff); background-size:0% 100%; }
-
 
 /* 스킬 */
 .skill { position:relative; height:400px; display:flex; align-items:center; justify-content: center; margin-top:-1px; }
@@ -65,10 +73,6 @@
     100%{ transform:translateX(100%) }
 }
 
-@media(max-width:1440px){
-    .skill .trackA .track2{ overflow:hidden }
-}
-
 /* circleBox */
 .circleBox{ position:relative; height:490px; overflow:hidden; }
 .circleBox .circle{ display:block; width:2500px; height:2500px; border-radius:50%; background:#fff; position:absolute; top:20%; left:50%; transform:translateX(-50%); }
@@ -76,8 +80,9 @@
 /* works */
 .works{ display:flex; justify-content: flex-end; background:#fff; height:100vh !important; }
 .works .inner{ width:90%; padding:60px 67px ; border-radius:50px 0 0 50px; display:flex; flex-direction: column; align-items:center; justify-content:center; }
+.works .inner h3{ font-family:"Lalezar", system-ui; font-size:100px; font-weight:500; line-height:1; text-transform: uppercase; color:#000; }
 .works .inner > p{ font-size:25px; margin-top:10px; font-weight:500; color:#000; }
-.worksBox{ margin-top:60px; }
+.worksBox{ margin-top:60px; overflow-x:hidden; }
 .workWrap{ display:flex; gap:20px; }
 .workWrap .workList{ width:20%; flex-shrink:0 !important; }
 .workWrap .workList .thumb{ width:100%; height:0; padding-top:calc(770/1000*100%); background:url(../images/thumb01.jpeg)no-repeat; background-size:contain; border-radius:20px; border:1px solid #d2d2d2; }
@@ -87,17 +92,27 @@
 .listTxt .title{ margin-top:5px; font-size:20px; }
 .listTxt .date{ margin-top:15px; font-size:14px; color:#313030; font-weight:500; }
 
+.moreBtn{ margin-top:100px; }
+.moreBtn button{ position:relative; text-align:center; display:inline-block; background:#071017; color:#fff; padding:20px 0; width:250px; border-radius:50px; font-size:18px; font-weight:600; overflow:hidden; transition:all .2s linear 0s; }
+.moreBtn button:after{ content:''; position:absolute; width:20px; height:20px; background:url(../images/right-arrow.png)no-repeat; background-size:contain; font-size:15px; right:20px; top:50%; transform:translateY(-50%); opacity:0; transition:all .2s linear 0s; }
+.moreBtn button:hover{ text-indent:-20px; background:#FFBF0E }
+.moreBtn button:hover:after{ opacity: 1; }
+.moreBtn button .arrowRight{ position:absolute; width:40px; height:40px; right:30px; top:13px; background:#30404E; border-radius:100%; padding:8px; box-sizing:border-box }
+.moreBtn button .arrowRight img{ width:100%; }
+.moreBtn button .arrowRight:hover{ animation:moreBtn 1s linear; animation-iteration-count:infinite; }
+
+
 
 /* portfolio */
 .portfolio { position:relative; }
 .portfolio .portTitle{ width:100%; text-align:center; padding-top:20vh; box-sizing:border-box; }
-.portfolio .portTitle p{ font-size:11rem; line-height:0.9; }
+.portfolio .portTitle p{ font-size:220px; line-height:0.9; }
 .portfolio .portTitle .portA{ font-family:'Public Sans', sans-serif }
 .portfolio .portTitle .portB{ font-family:'Cormorant Infant', serif }
 .portfolio .portC{ display:flex; z-index:2; margin-top:18%; text-align:center; transform:translateX(-50%); }
 
-.portfolio .portBox{ width:1440px; margin:auto; }
-.portfolio .portBox ul{ display:flex; flex-direction:column }
+.portfolio .portBox{ width:100%; margin:0 auto; }
+.portfolio .portBox ul{ display:flex; flex-wrap:wrap; justify-content: space-between; }
 .portfolio .portBox ul li[class^=card-wedo]{ position:relative; width:450px; height:450px; margin:10vh 0; border:1px solid #000; border-radius:100%; overflow:hidden; transition:all .5s ease-out; }
 .portfolio .portBox ul li[class^=card-wedo]:hover{ border-radius:20px; overflow:hidden; transition:all .5s; }
 .portfolio .portBox ul li a{ width:100%; height:100%; }
@@ -111,107 +126,23 @@
 .portfolio .portBox ul li .portTxtBox{ margin-top:20px; }
 .portfolio .portBox ul li .portTxtBox h3{ font-size:35px; font-weight:500; padding-bottom:50px; }
 .portfolio .portBox ul li .portTxtBox p{ color:#888; }
-.portfolio .portBox ul li:nth-child(even){ margin-left:auto }
+.portfolio .portBox ul li.card-wedo-01{ margin-left:15vw }
+.portfolio .portBox ul li.card-wedo-02{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-03{ margin-left:15vw; }
+.portfolio .portBox ul li.card-wedo-04{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-05{ margin-left:15vw; }
+.portfolio .portBox ul li.card-wedo-06{ margin-left:60vw; }
+.portfolio .portBox ul li.card-wedo-07{ margin-left:15vw; }
 
 /* history */
-.mainTask{ width:100%; position:relative; background:#000; margin:5rem 0; }
-.mainTask .mainTaskWrap{ width:1770px; display:flex; flex-direction: column; height:100%; box-sizing:border-box; margin:auto; }
-.mainTaskBox{ margin-top:3rem; display:flex; justify-content: center; flex-wrap:wrap; width:100%; border:1px solid #7e7e7e; border-radius:1rem; overflow:hidden; z-index:2 }
-.mainTaskBox .mainTaskList{ position:relative; height:300px; padding:1.5rem; box-sizing:border-box; transition: all 0.3s ease-in-out; }
-.mainTaskBox .mainTaskList:nth-child(-n+5){ width:33.33%; }
-.mainTaskBox .mainTaskList:nth-child(n+4):nth-child(-n+5){ width:50%; border-top:1px solid #7e7e7e }
-.mainTaskBox .mainTaskList:nth-child(n+2):nth-child(-n+3), .mainTaskBox .mainTaskList:nth-child(5){ border-left:1px solid #7e7e7e }
-.mainTaskBox .mainTaskList h3{ font-size:2rem; color:#fff; font-weight:500; line-height:1.5 }
-.mainTaskBox .mainTaskList .Task_Img{ width:8rem; height:8rem; background:#fff; }
-.mainTaskBox .mainTaskList .Task_Img img{ width:100%; height:100%; object-fit: contain; }
-.mainTaskBox .mainTaskList .whatDo_Txt{ margin-top:3rem; display:flex; justify-content: space-between; }
-.mainTaskBox .mainTaskList .whatDo_Txt p{ width:calc(100% - 10rem); }
-.mainTaskBox .mainTaskList .whatDo_Txt p span, .mainTaskBox .mainTaskList .whatDo_Txt p{ color:#7e7e7e; font-size:1.2rem; word-break:keep-all }
-.mainTask .mainTaskWrap .mainTaskBox .mainTaskList:hover{ background:#ffa500; transition:.3s }
-.mainTask .mainTaskWrap .mainTaskBox .mainTaskList:hover h3{ font-weight:600; color:#000; }
-.mainTaskBox .mainTaskList:hover .whatDo_Txt p, .mainTaskBox .mainTaskList:hover .whatDo_Txt p span{ color:#000; font-weight:500 }
+.mainTask{ width:100%; height:100vh; position:relative; z-index: 1; background:#000; margin-top:200px; }
+.mainTask .mainTaskWrap{ width:80%; display:flex; flex-direction: column; justify-content: center; align-items:center; height:100%; padding:50px 0; box-sizing:border-box; margin:0 auto; }
+.mainTask .mainTaskWrap h3{ font-family:"Lalezar", system-ui; font-size:70px; font-weight:500; text-align:center; line-height:1; text-transform: uppercase; color:#fff; }
+.mainTask .mainTaskWrap .mainTaskBox{ margin-top:40px; display:flex; justify-content: center; align-items:center; gap:1vw; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList{ display:flex; width:5vw; height:25vw; padding:15px; box-sizing:border-box; border:1px solid #7e7e7e; border-radius:10px; transition: all 0.3s ease-in-out; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList .Task_Img{ width:5vw; height:5vw; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList .Task_Img img{ width:100%; height:100%; object-fit: contain; }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList h3{ font-size:20px; color:#fff; font-weight:500; line-height:1.5 }
+.mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active{ display:block; width:30vw; background:#ffa500; }
+ .mainTask .mainTaskWrap .mainTaskBox .mainTaskList.active h3{ font-size:20px; font-weight:600; display:block; color:#000; }
 
-
-@media(max-width:1440px){
-    .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:2rem; }
-    .aboutMe .inner{ width:100%; padding:0 2rem; }
-    .aboutMe .inner .about_L{ position:relative; width:50%; padding:2rem 0; }
-    .aboutMe .inner .about_L:after{ height:80vh; top:50%; box-sizing:border-box }
-    .aboutMe .inner .about_L h2{ padding-left:0; }
-    .aboutMe .inner .about_R{ width:50%; padding:2rem 0 2rem 3rem; }
-    .aboutMe .inner .about_R p{ margin-top:3.3rem; }
-    .aboutMe .inner .about_R p span{ font-size:1.5rem; }
-    
-    .portfolio .portBox{ width:100%; padding:0 2rem; box-sizing:border-box }
-    .portfolio .portBox ul li[class^=card-wedo]{ width:20rem; height:20rem; }
-
-    .mainTask .mainTaskWrap{ width:100%; padding:0 2rem; box-sizing:border-box }
-    .mainTaskBox .mainTaskList .whatDo_Txt{ gap:1rem; }
-    .mainTaskBox .mainTaskList .whatDo_Txt p{ width:calc(100% - 6rem); }
-    .mainTaskBox .mainTaskList .whatDo_Txt p span, .mainTaskBox .mainTaskList .whatDo_Txt p{ font-size:1rem; }
-}
-
-@media(max-width:1080px){
-
-    .aboutMe .inner .about_R p span{ font-size:1.3rem; word-break: keep-all; }
-
-    .portfolio .portBox{ padding:0; }
-
-    .mainTask .mainTaskWrap{ justify-content:flex-start; width: 100%; padding:0 1rem; }
-    .mainTaskBox .mainTaskList{ height:auto; }
-    .mainTaskBox .mainTaskList h3{ font-size:1.5rem; }
-    .mainTaskBox .mainTaskList .whatDo_Txt{ flex-direction: column-reverse; }
-    .mainTaskBox .mainTaskList .whatDo_Txt p{ width:100%; }
-    .mainTaskBox .mainTaskList .Task_Img{ margin-bottom:2.5rem; }
-}
-
-@media(max-width:780px){
-    .aboutMe{ padding:0; }
-    .aboutMe .inner{ flex-direction: column; justify-content:flex-start; padding:0 1rem; }
-    .aboutMe .inner .about_L, .aboutMe .inner .about_R{ width:100%; }
-    .aboutMe .inner .about_L{ padding:2rem 0 0; }
-    .aboutMe .inner .about_L:after{ display:none; }
-    .aboutMe .inner .about_L h2{ padding-left:0; }
-    .aboutMe .inner .about_R{ padding:0; margin-top:2.5rem }
-    .aboutMe .inner .about_R p{ margin-top:0; }
-
-    .skill{ height:20rem; }
-    .skill ul li{ margin:0; }
-    .skill .trackA{ height:7rem }
-    .skill .trackA .track{ gap:1rem; }
-    .skill .trackA .track .trackList{ width:6rem; height:6rem; }
-    .skill .trackA .track .trackList img{ width:100%; height:100%; }
-    .skill .trackA .track .trackList p{ font-size:0.8rem; }
-
-    .works .inner{ width:100%; padding:0 1rem; }
-    .works .inner > p{ font-size:0.8rem }
-    .worksBox{ margin-top:2rem }
-    .workWrap{ gap:1rem; }
-    .workWrap .workList{ width:40%; }
-    .listTxt .date, .listTxt .company{ font-size:0.8rem }
-    .listTxt .title{ font-size:1rem; }
-    .listTxt .date{ margin-top:0.5rem }
-    
-    .portfolio { padding:0 1rem; }
-    .portfolio .portTitle p{ font-size:5rem; }
-    .portfolio .portBox ul li[class^=card-wedo]{ width:10rem; height:10rem; }
-    .portfolio .portBox ul li.card-wedo-01{ margin-left:0; }
-    .portfolio .portBox ul li .port_hoverBox h3{ font-size:1rem; }
-    .portfolio .portBox ul li .port_hoverBox p{ font-size:0.8rem }
-
-    .mainTask{ margin-top:0; margin-bottom:3rem; }
-    
-    .mainTaskBox{ display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:2rem; border:none; border-radius:0; }
-
-    .mainTaskBox .mainTaskList:nth-child(n+1):nth-child(-n+5){ width:100%; padding:1.5rem 1rem; border:1px solid #7e7e7e }
-    .mainTaskBox .mainTaskList h3{ font-size:1rem; }
-    .mainTaskBox .mainTaskList .whatDo_Txt p, .mainTaskBox .mainTaskList .whatDo_Txt p span{ font-size:0.8rem; }
-    .mainTaskBox .mainTaskList .Task_Img{ width:5rem; height:5rem; margin-bottom:2rem; }
-}
-@media(max-width:380px){
-    .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:1.5rem; }
-    .aboutMe .inner .about_R p span{ font-size:1.1rem; }
-    .aboutMe .inner .about_R p br{ line-height:1; }
-
-    .mainTaskBox{ grid-template-columns: 1fr; }
-}

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../css/sub.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <style>
+        .typeHl{color: red !important;}
+    </style>
 
 </head>
 <body>
@@ -26,17 +29,17 @@
                     <div class="navBox ">
                         <div class="inner">
                             <ul>
-                                <li><a href="../index.html">Home</a></li>
-                                <li><a href="./about.html">About me</a></li>
-                                <li><a href="./portfolio.html">Portfolio</a></li>
-                                <li><a href="./history.html">History</a></li>
-                                <li><a href="">Contact Me</a></li>
+                                <li><a href="../index.html" class="animate" data-animate="motion" data-splitting>Home</a></li>
+                                <li><a href="./about.html" class=" animate" data-animate="motion" data-splitting>About me</a></li>
+                                <li><a href="./portfolio.html" class=" animate" data-animate="motion" data-splitting>Portfolio</a></li>
+                                <li><a href="" class=" animate" data-animate="motion" data-splitting>Contact Me</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="subPg">
             <div class="sub_port">
                 <div class="subTopSlide">
@@ -74,27 +77,34 @@
                     </div>
                 </div>
             </div>
+
             <footer>
                 <div class="footerWrap">
-                    <h2 class="font_Cor contTit">Contact Me</h2>
-                    <div class="contactBox">
-                        <p class="email">
-                            <span>e-mail</span>
-                            <a href="mailto:smallyoung24@naver.com">smallyoung24@naver.com</a>
-                        </p>
-                        <p class="phone"><span>phone</span><a href="tel:01062066615">010.6206.6615</a></p>
+                    <div class="contact">
+                        <div class="contactWrap">
+                            <h2>Contact Me</h2>
+                            <div class="contactBox">
+                                <p class="email">
+                                    <span>e-mail</span>
+                                    <a href="mailto:smallyoung24@naver.com">smallyoung24@naver.com</a>
+                                </p>
+                                <p class="phone"><span>phone</span><a href="tel:01062066615">010.6206.6615</a></p>
+        
+                            </div>
+                        </div>
                     </div>
                     <p class="copyright">&copy;2025 YuiJin All Right Reserved</p>
                 </div>
             </footer>
         </div>
     </div>
+
+
     <script src="../js/json.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/scrolla.jquery.min.js"></script>
     <script src="../js/splitting.min.js"></script>
     <script src="../js/portfolio.js"></script>
     <script src="../js/common.js"></script>
-
 </body>
 </html>
