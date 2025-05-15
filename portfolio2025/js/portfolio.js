@@ -62,7 +62,7 @@ const make = {
     getGridPortDiv : function (info) {
         let portHtml = '';
         portHtml += `<div class="portList">`;
-        portHtml += `	<div class="portThumb"> <img src="../images/${info.thumbImb}.jpeg" alt="${info.title} 이미지">  </div>`;
+        portHtml += `	<div class="portThumb"> <img src="../images/${info.thumbImb}.png" alt="${info.title} 이미지">  </div>`;
         portHtml += `	<div class="portTxt">`;
         portHtml += make.getPortTypeUl(info);
         portHtml += `		<h3>${info.title}</h3>`;
@@ -113,7 +113,7 @@ const make = {
     getListPortDiv : function (info) {
         let portHtml = '';
         portHtml += `<div class="portList">`;
-        portHtml += `	<img src="../images/${info.thumbImb}.jpeg" alt="" class="fadeImg" alt="${info.title} 이미지">`;
+        portHtml += `	<img src="../images/${info.thumbImb}.png" alt="" class="fadeImg" alt="${info.title} 이미지">`;
         portHtml += `	<div class="portTxt">`;
         portHtml += `		<h3><a href="">${info.title}</a></h3>`;
         portHtml += make.getListPortTypeUlP(info);

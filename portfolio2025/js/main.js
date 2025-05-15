@@ -2,6 +2,7 @@ $(document).ready(function(){
     initGsapScrollMain();
 })
 
+
 function initGsapScrollMain(){
     if(window.innerWidth >= window.innerHeight){
         /* character */

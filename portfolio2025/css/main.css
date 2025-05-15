@@ -115,7 +115,7 @@
 
 /* history */
 .mainTask{ width:100%; position:relative; background:#000; margin:5rem 0; }
-.mainTask .mainTaskWrap{ width:1770px; display:flex; flex-direction: column; height:100%; box-sizing:border-box; margin:auto; }
+.mainTask .mainTaskWrap{ max-width:1770px; display:flex; flex-direction: column; height:100%; box-sizing:border-box; margin:auto; }
 .mainTaskBox{ margin-top:3rem; display:flex; justify-content: center; flex-wrap:wrap; width:100%; border:1px solid #7e7e7e; border-radius:1rem; overflow:hidden; z-index:2 }
 .mainTaskBox .mainTaskList{ position:relative; height:300px; padding:1.5rem; box-sizing:border-box; transition: all 0.3s ease-in-out; }
 .mainTaskBox .mainTaskList:nth-child(-n+5){ width:33.33%; }
@@ -131,6 +131,13 @@
 .mainTask .mainTaskWrap .mainTaskBox .mainTaskList:hover h3{ font-weight:600; color:#000; }
 .mainTaskBox .mainTaskList:hover .whatDo_Txt p, .mainTaskBox .mainTaskList:hover .whatDo_Txt p span{ color:#000; font-weight:500 }
 
+@media(max-width:1660px){
+    /* .works{ padding:2rem 0; } */
+    .aboutMe .inner .about_L{ padding:1.5rem 60px 1.5rem 0; }
+    .aboutMe .inner .about_R{ padding:2rem 0 2rem 40px }
+
+    .worksBox{ margin-top:2rem; }
+}
 
 @media(max-width:1440px){
     .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:2rem; }
@@ -141,6 +148,8 @@
     .aboutMe .inner .about_R{ width:50%; padding:2rem 0 2rem 3rem; }
     .aboutMe .inner .about_R p{ margin-top:3.3rem; }
     .aboutMe .inner .about_R p span{ font-size:1.5rem; }
+
+
     
     .portfolio .portBox{ width:100%; padding:0 2rem; box-sizing:border-box }
     .portfolio .portBox ul li[class^=card-wedo]{ width:20rem; height:20rem; }
@@ -154,7 +163,7 @@
 @media(max-width:1080px){
 
     .aboutMe .inner .about_R p span{ font-size:1.3rem; word-break: keep-all; }
-
+    .portfolio{ padding:0 2rem; }
     .portfolio .portBox{ padding:0; }
 
     .mainTask .mainTaskWrap{ justify-content:flex-start; width: 100%; padding:0 1rem; }
@@ -183,6 +192,9 @@
     .skill .trackA .track .trackList img{ width:100%; height:100%; }
     .skill .trackA .track .trackList p{ font-size:0.8rem; }
 
+
+    .circleBox{ height:10rem; }
+
     .works .inner{ width:100%; padding:0 1rem; }
     .works .inner > p{ font-size:0.8rem }
     .worksBox{ margin-top:2rem }
@@ -194,7 +206,7 @@
     
     .portfolio { padding:0 1rem; }
     .portfolio .portTitle p{ font-size:5rem; }
-    .portfolio .portBox ul li[class^=card-wedo]{ width:10rem; height:10rem; }
+    .portfolio .portBox ul li[class^=card-wedo]{ width:13rem; height:13rem; }
     .portfolio .portBox ul li.card-wedo-01{ margin-left:0; }
     .portfolio .portBox ul li .port_hoverBox h3{ font-size:1rem; }
     .portfolio .portBox ul li .port_hoverBox p{ font-size:0.8rem }
@@ -212,6 +224,8 @@
     .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:1.5rem; }
     .aboutMe .inner .about_R p span{ font-size:1.1rem; }
     .aboutMe .inner .about_R p br{ line-height:1; }
+
+    .portfolio .portBox ul li[class^=card-wedo]{ width:9rem; height:9rem; margin-top:3rem; margin-bottom:3rem; }
 
     .mainTaskBox{ grid-template-columns: 1fr; }
 }
