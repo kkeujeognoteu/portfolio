@@ -94,7 +94,7 @@ function initGsapScrollMain(){
     
         gsap.timeline({
             scrollTrigger:{
-                trigger:'.portBox ul',
+                trigger:'.portBox > ul',
                 start:'0% 100%',
                 end:'0% 100%',
                 scrub:1,
@@ -105,10 +105,10 @@ function initGsapScrollMain(){
         .to('.contain',{backgroundColor:'#222222', color:'#000', ease:'none', duration:5},0)
         //title 글자 position:fixed 적용
         .to('.portfolio .portTitle',{position:'fixed', ease:'none', left:'0', top:'0', width: '100%', zIndex:'1'},0)
-        .to('.portfolio .portC',{position:'fixed',left:'50%', bottom:'23%',zIndex:'2', ease:'none'},0)
+        // .to('.portfolio .portC',{position:'fixed',left:'50%', bottom:'23%',zIndex:'2', ease:'none'},0)
         
         //list card 부드럽게 올라가기
-        .fromTo('.portBox ul',{margin:'0 auto'},{margin:'100vh auto 0', position:'relative', zIndex:'1'},0)
+        .fromTo('.portBox > ul',{margin:'0 auto'},{margin:'100vh auto 0', position:'relative', zIndex:'1'},0)
     
         gsap.timeline({
             scrollTrigger:{
@@ -121,7 +121,7 @@ function initGsapScrollMain(){
         .to('.contain',{backgroundColor:'#000', color:'#fff', ease:'none', duration:5},0)
         .to('.portfolio .portTitle .portA',{x:'-100%', zIndex:'-1', ease:'none', duration:5},0)
         .to('.portfolio .portTitle .portB',{x:'100%', zIndex:'-1', ease: 'none', duration:5},0)
-        .to('.portfolio .portC',{x:'100%',position:'fixed', width: '100%', zIndex:'1', ease:'none'},0)
+        // .to('.portfolio .portC',{x:'100%',position:'fixed', width: '100%', zIndex:'1', ease:'none'},0)
     
         
         /* main work js */
@@ -230,7 +230,7 @@ function initGsapScrollMain(){
     
         gsap.timeline({
             scrollTrigger:{
-                trigger:'.portBox ul',
+                trigger:'.portBox > ul',
                 start:'0% 100%',
                 end:'0% 100%',
                 scrub:1,
@@ -244,7 +244,7 @@ function initGsapScrollMain(){
         .to('.portfolio .portC',{position:'fixed',left:'50%', bottom:'23%',zIndex:'2', ease:'none'},0)
         
         //list card 부드럽게 올라가기
-        .fromTo('.portBox ul',{margin:'0 auto'},{margin:'100vh auto 0', position:'relative', zIndex:'1'},0)
+        .fromTo('.portBox > ul',{margin:'0 auto'},{margin:'100vh auto 0', position:'relative', zIndex:'1'},0)
     
         gsap.timeline({
             scrollTrigger:{
