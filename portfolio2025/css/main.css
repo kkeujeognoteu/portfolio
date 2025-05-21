@@ -182,6 +182,11 @@
 }
 
 @media(max-width:780px){
+
+    .character .stage{ max-width:50px; background:url(../images/character_mo.png)no-repeat 0 center }
+    .character .mainTopTxt p span{ font-size:3rem; }
+    .character .mainTopTxt .motion .word[data-word="YuJin"]{ margin-left:4rem; }
+
     .aboutMe{ padding:0; }
     .aboutMe .inner{ flex-direction: column; justify-content:flex-start; padding:0 1rem; }
     .aboutMe .inner .about_L, .aboutMe .inner .about_R{ width:100%; }
@@ -190,6 +195,8 @@
     .aboutMe .inner .about_L h2{ padding-left:0; }
     .aboutMe .inner .about_R{ padding:0; margin-top:2.5rem }
     .aboutMe .inner .about_R p{ margin-top:0; }
+    .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:1.3rem; }
+    .aboutMe .inner .about_R p span{ font-size:1rem; }
 
     .skill{ height:20rem; }
     .skill ul li{ margin:0; }
@@ -231,8 +238,6 @@
     .mainTaskBox .mainTaskList .Task_Img{ width:100%; height:5rem; margin-bottom:2rem; }
 }
 @media(max-width:380px){
-    .aboutMe .inner .about_L h2, .aboutMe .inner .about_L h2 span{ font-size:1.5rem; }
-    .aboutMe .inner .about_R p span{ font-size:1.1rem; }
     .aboutMe .inner .about_R p br{ line-height:1; }
 
     .portfolio .portBox ul li[class^=card-wedo]{ width:9rem; height:9rem; margin-top:3rem; margin-bottom:3rem; }

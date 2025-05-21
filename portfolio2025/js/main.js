@@ -143,7 +143,7 @@ function initGsapScrollMain(){
     }else if(window.innerWidth < 1080){
         /* character */
         const frameCount = 15;
-                offsetValue = 100;
+                offsetValue = 50;
                 
     
         gsap.to('.stage', {
@@ -189,14 +189,14 @@ function initGsapScrollMain(){
         /* works */
         let workList = gsap.utils.toArray('.workWrap .workList'); //배열
         let scrollTween = gsap.to(workList,{
-            xPercent : -100 * (workList.length -4), //리스트의 길이를 기반으로 마지막 요소까지 이동해야 할 거리를 백분율 단위로 계산하는 수식
+            xPercent : -250 * (workList.length -4), //리스트의 길이를 기반으로 마지막 요소까지 이동해야 할 거리를 백분율 단위로 계산하는 수식
             ease:'none',
             scrollTrigger: {
                 trigger : '.works',
                 pin:true,
                 scrub: true,
                 start:'center center',
-                end:'200%',
+                end:'400%',
             }
         });
     
@@ -258,6 +258,23 @@ function initGsapScrollMain(){
         .to('.portfolio .portTitle .portA',{x:'-100%', zIndex:'-1', ease:'none', duration:5},0)
         .to('.portfolio .portTitle .portB',{x:'100%', zIndex:'-1', ease: 'none', duration:5},0)
         .to('.portfolio .portC',{x:'100%',position:'fixed', width: '100%', zIndex:'1', ease:'none'},0)
+    }else if(window.innerWidth < 780){
+        const frameCount = 15;
+                offsetValue = 50;
+                
+    
+        gsap.to('.stage', {
+            backgroundPosition : (- offsetValue * frameCount * 1.0) + "px center",
+    
+            ease: 'steps(' + frameCount + ')',
+            scrollTrigger: {
+                trigger : '.character',
+                start : 'top top',
+                end :'+=' + (frameCount * offsetValue),
+                pin : true,
+                scrub : true,
+            }
+        })
     }
 }
 
