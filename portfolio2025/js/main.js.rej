@@ -1,6 +1,0 @@
-diff a/portfolio2025/js/main.js b/portfolio2025/js/main.js	(rejected hunks)
-@@ -2,4 +1,3 @@
--$(function(){
- // //02. header  영역 스크롤 방향 이벤트
- // $(function(){
- //     var prevScrollTop = 0;
