@@ -204,10 +204,10 @@ function initGsapScroll02(){
     
         // 총 가로 이동 거리 계산
         // const totalX = -100 * (sections.length - 0);
-        scrollWrap.style.width = `${sections.length * 100}vw`
+        scrollWrap.style.width = `${sections.length * 200}vw`
     
         gsap.to(scrollWrap, {
-        xPercent: -100 * (sections.length),
+        xPercent: -130 * (sections.length),
         ease: "none",
         scrollTrigger: {
             trigger: ".aboutScrollX", //전체영역
@@ -283,7 +283,7 @@ function initGsapScroll02(){
                 pin:true,
                 scrub:3,
                 start:'top top',
-                end:'+=400%',
+                end:'+=300%',
             }
         })
         hobbyT1.from(hobbyImg,{'y':'300%','duration':'8','ease':'none','stagger':'6'})

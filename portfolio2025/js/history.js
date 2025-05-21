@@ -82,7 +82,7 @@ function initGsapScroll03(){
                 qna_A.forEach(el => {
                     gsap.to(el,{
                         height:0,
-                        opacity:0,
+                        visibility:'hidden',
                         // paddingTop:0,
                         // paddingBottom:0,
                         duration:0.3,
@@ -103,13 +103,13 @@ function initGsapScroll03(){
                 gsap.fromTo(target,
                     {
                         height:0,
-                        opacity:0,
+                        visibility:'hidden',
                         // paddingTop:0,
                         // paddingBottom:0
                     },
                     {
                         height:height,
-                        opacity:1,
+                        visibility:'visible',
                         duration:0.4,
                         ease:'power2.out'
                     }

@@ -92,7 +92,7 @@
 /* portfolio */
 .portfolio { position:relative; }
 .portfolio .portTitle{ width:100%; text-align:center; padding-top:20vh; box-sizing:border-box; }
-.portfolio .portTitle p{ font-size:11rem; line-height:0.9; }
+.portfolio .portTitle p{ font-size:11rem; line-height:0.9; color:#fff; }
 .portfolio .portTitle .portA{ font-family:'Public Sans', sans-serif }
 .portfolio .portTitle .portB{ font-family:'Cormorant Infant', serif }
 .portfolio .portC{ display:flex; z-index:2; margin-top:18%; text-align:center; transform:translateX(-50%); display:none; }

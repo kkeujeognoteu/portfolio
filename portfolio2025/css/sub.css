@@ -32,7 +32,7 @@
 .tab-content.active{ display:block; } 
 .portTab02 { margin-top:20px; }
 .portTab02 ul{ display:flex; }
-.portTab02 ul li{ position:relative; cursor:pointer; margin:0 10px; overflow:hidden }
+.portTab02 ul li{ position:relative; cursor:pointer; color:#fff; margin:0 10px; overflow:hidden }
 .portTab02 ul li span{ display:block; width:100%; height:100%; padding:8px 20px; color:#f19c00; border:1px solid #ffa500;  font-size:14px; box-sizing: border-box; }
 .portTab02 ul li:after{ content:attr(data-hover); position:absolute; width:100%; height:100%; left:-100%; top:0; background:#fff; text-align:center; align-content:center; font-size:14px; transition:.3s; overflow:hidden; z-index:-1 }
 .portTab02 ul li:hover span, .portTab02 ul li.active span  { color:#fff; transform:translateX(100%); width:100%; height:100%; }
@@ -55,30 +55,36 @@
 .subPortBox .portList .portTxt h3{ font-size:20px; color:#000; font-weight:700; padding:10px 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; word-break:break-word; }
 .subPortBox .portList .portTxt .portTxt02{ font-size:14px; color:#7C7C7C; text-overflow:ellipsis; overflow:hidden; font-weight:500; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-break:break-word }
 .subPortBox .portList .portTxt .lst_btn{ margin-top:30px; }
-.subPortBox .portList .portTxt .lst_btn button{ display:inline-block; padding:5px 15px; border:1px solid #e0e0e0; color:#7C7C7C; }
+.subPortBox .portList .portTxt .lst_btn button{ display:inline-block; padding:5px 15px; border:1px solid #e0e0e0; color:#7C7C7C; margin-right:1rem; }
 
 .portCont02, .portContTab_lst{ display:none; }
 .portCont02.active, .portContTab_lst.active{ display:block; }
 
 .portContTab_lst .portList { position:relative; padding:15px 10px; border-bottom:1px solid #c9c9c9; }
 .portContTab_lst .portList img.fadeImg{ position:fixed; top:0%; left:0%; width:350px; height:auto; pointer-events:none; z-index:9999; opacity: 0; }
-.portContTab_lst .portList .portTxt{ display:flex; gap:10px; }
+.portContTab_lst .portList .portTxt{ display:flex; gap:10px; align-items:center; }
 .portContTab_lst .portList .portTxt h3{ width:60%; }
 .portContTab_lst .portList .portTxt h3 a{ color:#000; }
 .portContTab_lst .portList .portTxt p{ width:30%; color:#7C7C7C; font-weight:500; text-align:center; font-style: italic; }
 .portContTab_lst .portList .portTxt .infoBtn{ width:10%; display:flex; gap:10px; justify-content:center; }
-.portContTab_lst .portList .portTxt .infoBtn a{ padding:5px 10px; background:#ffa500; color:#fff; font-size:1.1rem; }
+.portContTab_lst .portList .portTxt .infoBtn a{ padding:5px 10px; background:#ffa500; color:#fff; font-size:0.88rem; }
 
 /*  about - 소개 */
 .aboutFix{ display:flex; align-items:center; gap:40px; }
 .aboutTitle_L{ width:40%; padding-right:40px; }
 .aboutTitle_L h3{ color:#000;  font-size:40px; font-weight:700; line-height: 1.3; }
 .aboutTitle_L .aboutImg.motion h2{ animation:fadeIn_img .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)); transition:.1s }
+.subPortBox .portList.motion{ animation:slide_Up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)); transition:.1s }
 
 @keyframes fadeIn_img{
     0%{ opacity: 0;}
     30%{ opacity: 1;}
 }
+@keyframes slide_Up{
+    0%{transform:translateY(30px); opacity: 0;}
+    30%{transform:translateY(30px); opacity: 0;}
+}
+
 .aboutTitle_L .aboutImg img{ width:100%; height:100%; object-fit: contain; }
 .aboutTitle_R{ position:relative; width:60%; height:100vh; }
 .aboutTitle_R .aboutList{ position:absolute; width:100%; left:0; top:0; top:50%; transform:translateY(-50%); opacity: 1; height:100%; align-content:center; background:#fff; }
@@ -160,8 +166,8 @@
 /* hobby */
 .hobby .hobbyWrap{ width:1770px; height:100%; margin: auto; box-sizing:border-box; }
 .hobby .hobbyWrap h2{ position:absolute; color:#fff; font-size:20rem; text-align:center; font-weight:600; font-family:'Cormorant Infant', serif; top:50%; left:50%; transform:translate(-50%, -50%); }
-.hobby .hobbyWrap .hobbyCon { position:relative; margin-top:5rem; }
-.hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ position:absolute; width:500px; height:350px; top:0; left:50%; background:#fff; padding:25px 25px 75px; border:1px solid #7C7C7C }
+.hobby .hobbyWrap .hobbyCon { position:relative; /*margin-top:5rem;*/ height:100%; }
+.hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ position:absolute; width:500px; height:350px; top:20%; left:50%; background:#fff; padding:25px 25px 75px; border:1px solid #7C7C7C; transform:translate(-50%, -50%); }
 .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(1){ transform:translateX(-50%) rotate(5deg) }
 .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(2){ transform:translateX(-50%) rotate(-5deg) }
 .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(3){ transform:translateX(-50%) rotate(0deg) }
@@ -178,10 +184,10 @@
 .qna table td{ padding:10px 15px; width:100%; box-sizing:border-box; }
 .qna table .question{ cursor:pointer; }
 .qna table .question td{ display:flex; align-items:center; }
-.qna table .question td span{ font-size:1.3rem; }
+.qna table .question td span{ font-size:1.3rem; color:#fff; }
 .qna table .question .pluse{ margin-left:auto; }
 .qna table .answer{ background:#777; overflow:hidden; height:0; padding:0; opacity:0; display:block; }
-.qna table .answer span{ font-weight:400; font-size:1.2rem; }
+.qna table .answer span{ font-weight:400; font-size:1.2rem; color:#fff; }
 .qna table .answer span strong{ font-weight:600; color:#ffa500 }
 
 /* view more */
@@ -194,8 +200,8 @@
 .viewBox .viewItem.item02{ margin-top:8rem; }
 .viewBox .viewItem.item03{ margin-top:4rem; }
 .viewBox .viewItem a{ display:flex; justify-content:center; width:100%; height:100%; }
-.viewBox .viewItem a p{ font-size:1.2rem; align-content: center; text-align:center; }
-.viewBox .viewItem.motion{ animation:slideUp .5s ease-in; }
+.viewBox .viewItem a p{ font-size:1.2rem; align-content: center; text-align:center; color:#fff; }
+.viewBox .viewItem.motion{ animation:slideUp .5s ease-in; color:#fff; }
 .viewBox .viewItem.motion:after{ animation:slideUp .5s ease-in; }
 @keyframes slideUp{
     0%{ transform:scale(0) }
@@ -205,12 +211,12 @@
 /* 강점 */
 .strength{ position:relative; width:100%; height:30vh; }
 .strengthList{ height:100%; display:flex; align-items:center; justify-content:flex-start; padding:.5rem 0; }
-.strengthList > div{ position:absolute; display:flex; align-items:center; justify-content:flex-start; width:110%; background:#fff; }
+.strengthList > div{ position:absolute; display:flex; align-items:center; justify-content:flex-start; width:120%; background:#fff; }
 .strengthList > div:hover{ background:#222; transition:.5s }
 .strengthList > div:hover li{ color:#fff }
 .strengthList > div:hover li:after{ background:#fff }
-.strengthList > div:nth-child(1){ transform:rotate(-7deg); left:-4%; }
-.strengthList > div:nth-child(2){ transform:rotate(7deg); z-index:1;  left:-4%; }
+.strengthList > div:nth-child(1){ transform:rotate(-7deg); left:-8%; }
+.strengthList > div:nth-child(2){ transform:rotate(7deg); z-index:1;  left:-8%; }
 .strengthList > div:nth-child(1) ul{ animation: strengh01 20s linear infinite }
 .strengthList > div:nth-child(2) ul{ animation: strengh02 20s linear infinite }
 .strength ul{ display:flex; justify-content: flex-start; align-items:center; padding:20px; }
@@ -256,7 +262,8 @@
 /* carrer */
 .carrer{ margin:5rem 0; width:100%; display:flex; justify-content: center; }
 .carrer .carrerWrap{ max-width:1700px; width:100%; }
-.carrer .carrerWrap > div{ padding:1.5rem; box-sizing:border-box; }
+.carrer .carrerWrap table{ width:100%; }
+.carrer .carrerWrap table td { width:100%; padding:1.5rem; box-sizing:border-box; display:flex; align-items:center; }
 .carrer .carrerWrap .carrerLst { display:flex; align-items:center; border-bottom:1px solid #777; width:100%; }
 .carrer .carrerWrap .carrerLst div{ display:flex; align-items:center; width:95%; }
 .carrer .carrerWrap .carrerLst h3 { display:flex; align-items:flex-end; gap:1rem; color:#7C7C7C; width:80%; }
@@ -415,11 +422,13 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .aboutTitle_L, .aboutTitle_R{ width:100%; }
     .aboutTitle_R .titleList h2, .aboutTitle_R .proflie .list h4{ font-size:1rem; }
     .aboutTitle_R .titleList p, .aboutTitle_R .proflie .list li span{ font-size:0.8rem; }
+    .aboutTitle_R{ height:70vh; }
     .aboutTitle_R .proflie .portWrap{ gap:0.5rem; }
-    .sclXTxt .personlity p span{ font-size:2rem; }
+    .aboutTitle_R .proflie .list .dl, .aboutTitle_R .proflie .list .dl_01{ width:auto; }
+    .sclXTxt .personlity p span{ font-size:5rem; }
     
     .hobby .hobbyWrap h2{ font-size:7rem; }
-    .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ width:14rem; height:12rem; padding:1rem 1rem 2.5rem }
+    .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ width:14rem; height:12rem; padding:1rem 1rem 2.5rem; top:40% }
     .hobby .hobbyWrap .hobbyCon .hobbyImg div{ margin-top:0; }
     .hobby .hobbyWrap .hobbyCon .hobbyImg span{ font-size:0.8rem; }
 
@@ -431,7 +440,8 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .toolBox .toolCard ul li p{ font-size:1rem; }
     .toolBox .toolCard ul li p em{ font-size:0.8rem; }
     
-    .viewMore{ padding:0; }
+    .viewmoreCont{ height:auto; }
+    .viewMore{ padding:0; height:auto; }
     .viewBox{ gap:1rem; flex-wrap:wrap; justify-content: flex-start; }
     .viewBox .viewItem{ width:47%; }
     .viewBox .viewItem.item01, .viewBox .viewItem.item02, .viewBox .viewItem.item03{ margin:0; }

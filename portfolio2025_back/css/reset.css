@@ -7,8 +7,7 @@ html.cont::-webkit-scrollbar{ width:5px; }
 html::-webkit-scrollbar-thumb{ background-color:#091925; border-radius:10px; }
 html::-webkit-scrollbar-track{ border-radius:10px; }
 
-html, body{ overflow-x:hidden; width:100%; }
-html, body, div, p, span, h1, h2, h3, h4, h5, h6, a, img, strong, i, ul, li, ol{ margin:0; padding:0; font-size:16px; font-family:'Noto Sans KR', sans-serif; font-weight:600; }
+html, body, div, p, span, h1, h2, h3, h4, h5, h6, a, img, strong, i, ul, li, ol{ margin:0; padding:0; font-size:16px; font-family:'Noto Sans KR', sans-serif; font-weight:600; color:#fff; }
 li{ list-style:none; }
 a{ text-decoration:none; display:block; }
 button{ border:none; background:transparent; color:#fff; margin:0; cursor:pointer; }

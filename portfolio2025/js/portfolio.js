@@ -61,7 +61,7 @@ const make = {
      * */
     getGridPortDiv : function (info) {
         let portHtml = '';
-        portHtml += `<div class="portList">`;
+        portHtml += `<div class="portList animate" data-animate="motion" data-splitting>`;
         portHtml += `	<div class="portThumb"> <img src="../images/${info.thumbImb}.png" alt="${info.title} 이미지">  </div>`;
         portHtml += `	<div class="portTxt">`;
         portHtml += make.getPortTypeUl(info);
@@ -301,6 +301,7 @@ let fnEvent = {
  * */
 let fnScroll = {
     titScroll : null,
+    infoScroll: null,
     /**
      * 스크롤 이벤트 관련 추가
      * */
@@ -339,18 +340,28 @@ let fnScroll = {
                     }, 0)
 
 
-                fnScroll.titScroll = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".sub_port .subTopSlide",
-                        start: "20% top",
-                        end: "80% 0%",
-                        anticipatePin: true,
-                        scrub: 0.5,
-                        toggleActions: "play none none reverse",
-                        pin: false,
-                        markers: false,
-                    }
+                // fnScroll.titScroll = gsap.timeline({
+                //     scrollTrigger: {
+                //         trigger: ".sub_port .subTopSlide",
+                //         start: "20% top",
+                //         end: "80% 0%",
+                //         anticipatePin: true,
+                //         scrub: 0.5,
+                //         toggleActions: "play none none reverse",
+                //         pin: false,
+                //         markers: false,
+                //     }
+                // })
+                gsap.timeline({
+                    scrollTrigger:{
+                        trigger: '.fixedWrap',
+                        start:'70% 0%',
+                        end:'80% 0%',
+                        scrub:0.5,
+                        markers:true,
+                    },
                 })
+                .to(".subPg",{ backgroundColor:"#000", ease:'power2.in', duration:5},0)
             } else if (fnScroll.titScroll !== null){
                 fnScroll.titScroll.kill(true); // scrollTrigger 포함 제거
                 fnScroll.titScroll = null;
