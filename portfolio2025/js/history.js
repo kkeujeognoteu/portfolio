@@ -118,7 +118,6 @@ function initGsapScroll03(){
         })
 
     }else if(window.innerWidth < 1080){
-
         const storyScroll = document.querySelector('.storyWrap'); // 스크롤할 요소
         storyScroll.style.height = `${storyScroll.length * 100}vw`
         gsap.to(storyScroll,{
@@ -148,5 +147,50 @@ function initGsapScroll03(){
             currentIndex = (currentIndex + 1) % totalSlides;
             slider.style.transform = `translateX(-${currentIndex * 100}%)`;
         }, 3000); // 3초마다 슬라이드 전환
+        /* carrer */
+        let qna_Q = document.querySelectorAll('.carrerLst');
+        let qna_A = document.querySelectorAll('.carrDropdown');
+    
+        qna_Q.forEach((item, index)=>{
+            item.addEventListener('click', ()=>{
+                // 모두 닫기기
+                qna_Q.forEach(el=>el.classList.remove('active'));
+                qna_A.forEach(el => {
+                    gsap.to(el,{
+                        height:0,
+                        visibility:'hidden',
+                        // paddingTop:0,
+                        // paddingBottom:0,
+                        duration:0.3,
+                        ease:'power2.inOut'
+                    })
+                })
+    
+                // 해당 항목 열기
+                item.classList.add('active');
+    
+                const target = qna_A[index];
+    
+                //실제 높이 축증 후 애니메이션 적용
+                target.style.display = 'block';
+                target.style.height = 'auto';
+                let height = target.scrollHeight;
+    
+                gsap.fromTo(target,
+                    {
+                        height:0,
+                        visibility:'hidden',
+                        // paddingTop:0,
+                        // paddingBottom:0
+                    },
+                    {
+                        height:height,
+                        visibility:'visible',
+                        duration:0.4,
+                        ease:'power2.out'
+                    }
+                )
+            })
+        })
     }
 }

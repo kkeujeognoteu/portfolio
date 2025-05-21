@@ -51,7 +51,8 @@
 .subPortBox .portList .portThumb img{ width:100%; height:100%; object-fit: cover; }
 .subPortBox .portList .portTxt{ position:relative; padding:20px; background:#fff; }
 .subPortBox .portList .portTxt ul{ padding:0; }
-.subPortBox .portList .portTxt ul .type{ display:inline-block; padding:5px 20px 7px; background:#28bc9e; color:#fff; font-size:13px; line-height: 1; border-radius:50px; }
+.subPortBox .portList .portTxt ul .type{ display:inline-block; padding:5px 20px 7px; border-radius:50px; background:#239c83; margin-right:0.5rem; }
+.subPortBox .portList .portTxt ul .type span{ line-height: 1; color:#fff; }
 .subPortBox .portList .portTxt h3{ font-size:20px; color:#000; font-weight:700; padding:10px 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; word-break:break-word; }
 .subPortBox .portList .portTxt .portTxt02{ font-size:14px; color:#7C7C7C; text-overflow:ellipsis; overflow:hidden; font-weight:500; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-break:break-word }
 .subPortBox .portList .portTxt .lst_btn{ margin-top:30px; }
@@ -456,19 +457,24 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .portHead{ width:100%; padding:0 1rem; box-sizing:border-box; }
     .portHead h2{ font-size:1.5rem }
     .portHead h2 span{ font-size:1rem; }
-    .portHead p{ font-size:0.8rem; }
-    .portFilter_wrap{ width:100%; padding:0 1rem; box-sizing:border-box }
+    .portHead p{ font-size:0.8rem; margin:1rem 0; }
+    .portFilter_wrap{ width:100%; padding:0 0.88rem; box-sizing:border-box }
     .portTab{ flex-direction: column; }
-    .portTab02 ul li span{ padding:0.5rem 0.2rem }
+    .portTab02 ul li{ margin:0 0.2rem; }
+    .portTab02 ul li span{ padding:0.5rem 0.2rem; font-size:0.8rem; }
+    .portTab02 ul li:after{ font-size:0.8rem; }
     .tabGrid{ margin-top:1rem; }
     .subPortBox{ grid-column-gap:1rem; grid-row-gap:1rem }
     .subPortBox .portList .portThumb{ height:10rem; }
     .subPortBox .portList .portTxt{ padding:1rem; }
     .subPortBox .portList .portTxt h3{ font-size:1rem; white-space: normal; }
     .subPortBox .portList .portTxt .portTxt02{ font-size:0.8rem; }
-    .subPortBox .portList .portTxt ul .type{ padding:0.2rem 1rem; }
+    .subPortBox .portList .portTxt ul{ display:flex; gap:0.5rem; }
+    .subPortBox .portList .portTxt ul .type{ padding:0.2rem 0.5rem; line-height:1; margin-right:0; }
+    .subPortBox .portList .portTxt ul .type span{ font-size:0.8rem; }
     .subPortBox .portList .portTxt .lst_btn{ margin-top:1rem; }
     .subPortBox .portList .portTxt .lst_btn button{ padding:0.2rem; width:100%; }
+    .subPortBox .portList .portTxt .lst_btn button span{ font-size:0.8rem }
     .subPortBox .portList .portTxt .lst_btn button + button{ margin-top:0.5rem }
 
     /* stroy */
@@ -484,7 +490,10 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .proJ_Cont .slide { width: 100%; flex: 0 0 100%; }    
     .proJ_Cont .slide img { width: 100%; display: block; }
 
+    .carrer{ margin:0; padding:3rem 0; }
     .carrer .carrerWrap > div{ padding:1rem; }
+    .carrer .carrerWrap table td{ padding:1.5rem 0.5rem }
+    .carrer .carrerWrap .carrDropdown p{ font-size:1rem; }
 
 }
 
@@ -493,5 +502,9 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .storyBox .storyLst h4{ font-size:1rem; }
     .storyBox .storyLst p{ font-size:0.8rem; }
     .storyBox .storyLst p strong, .storyBox .storyLst span{ font-size:0.8rem; }
+    
+    .subPortBox .portList .portTxt{ padding:1rem 0.5rem; }
+
     .carrer .carrerWrap .carrerLst .data{ font-size:0.8rem; }
+    .carrer .carrerWrap .carrDropdown p{ font-size:0.8rem; }
 }

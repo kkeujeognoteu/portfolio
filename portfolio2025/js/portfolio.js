@@ -69,7 +69,7 @@ const make = {
         portHtml += `		<p class="portTxt02">${info.summary}</p>`;
         portHtml += `		<div class="lst_btn">`;
         portHtml += `			<button type="button" onclick="fnEvent.open(\'${info.link}\')">사이트 바로가기</button>`;
-        portHtml += `			<button type="button" >상세페이지 비로가기</button>`;
+        // portHtml += `			<button type="button" >상세페이지 비로가기</button>`;
         portHtml += `		</div>`;
         portHtml += `	</div>`;
         portHtml += `</div>`;
