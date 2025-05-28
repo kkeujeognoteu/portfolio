@@ -207,7 +207,7 @@
 
     .circleBox{ height:10rem; }
 
-    .works .inner{ width:100%; padding:0 1rem; }
+    .works .inner{ width:100%; padding:0 1rem; box-sizing: border-box; }
     .works .inner > p{ font-size:0.8rem }
     .worksBox{ margin-top:2rem; margin-left:9rem }
     .workWrap{ gap:1rem; }
