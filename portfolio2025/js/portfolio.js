@@ -61,7 +61,7 @@ const make = {
      * */
     getGridPortDiv : function (info) {
         let portHtml = '';
-        portHtml += `<div class="portList animate" data-animate="motion" data-splitting>`;
+        portHtml += `<div class="portList animate" data-animate="motion">`;
         portHtml += `	<div class="portThumb"> <img src="../images/${info.thumbImb}.png" alt="${info.title} 이미지">  </div>`;
         portHtml += `	<div class="portTxt">`;
         portHtml += make.getPortTypeUl(info);
@@ -69,7 +69,7 @@ const make = {
         portHtml += `		<p class="portTxt02">${info.summary}</p>`;
         portHtml += `		<div class="lst_btn">`;
         portHtml += `			<button type="button" onclick="fnEvent.open(\'${info.link}\')">사이트 바로가기</button>`;
-        // portHtml += `			<button type="button" >상세페이지 비로가기</button>`;
+        portHtml += `			<button type="button" onclick="fnEvent.open(\'${info.detail}\')">상세페이지 비로가기</button>`;
         portHtml += `		</div>`;
         portHtml += `	</div>`;
         portHtml += `</div>`;
@@ -118,8 +118,8 @@ const make = {
         portHtml += `		<h3><a href="">${info.title}</a></h3>`;
         portHtml += make.getListPortTypeUlP(info);
         portHtml += `		<div class="infoBtn">`;
-        portHtml += `			<a href="" onclick="fnEvent.open(\'${info.link}\')">상세보기</a>`;
-        portHtml += `			<a href="" target="_blank">링크</a>`;
+        portHtml += `			<button onclick="fnEvent.open(\'${info.detail}\')">상세보기</button>`;
+        portHtml += `			<button onclick="fnEvent.open(\'${info.link}\')">링크</button>`;
         portHtml += `		</div>`;
         portHtml += `	</div>`;
         portHtml += `</div>`;
@@ -358,7 +358,6 @@ let fnScroll = {
                         start:'70% 0%',
                         end:'80% 0%',
                         scrub:0.5,
-                        markers:true,
                     },
                 })
                 .to(".subPg",{ backgroundColor:"#000", ease:'power2.in', duration:5},0)
@@ -378,14 +377,13 @@ let fnScroll = {
                         scrub: 0.5,
                         toggleActions: "play none none reverse",
                         pin: false,
-                        markers: false,
                     }
                 });
 
                 fnScroll.titScroll
                     .to(".sub_port .subTopSlide .subTitle", {
                         top: '8%',
-                        left: '220px',
+                        left: '5rem',
                         transform: 'translate(0, 0%)',
                         scale: 0.5,
                         zIndex: 1,
@@ -410,9 +408,18 @@ let fnScroll = {
                         scrub: 0.5,
                         toggleActions: "play none none reverse",
                         pin: false,
-                        markers: false,
                     }
                 })
+
+                gsap.timeline({
+                    scrollTrigger:{
+                        trigger: '.fixedWrap',
+                        start:'70% 0%',
+                        end:'80% 0%',
+                        scrub:0.5,
+                    },
+                })
+                .to(".subPg",{ backgroundColor:"#000", ease:'power2.in', duration:5},0)
             } else if (fnScroll.titScroll !== null){
                 fnScroll.titScroll.kill(true); // scrollTrigger 포함 제거
                 fnScroll.titScroll = null;
@@ -422,8 +429,9 @@ let fnScroll = {
     }
 }
 
+
 // 반응형 대응을 위해 resize 시 재실행
-window.addEventListener('resize', function () {
-    initGsapScroll();
-});
+// window.addEventListener('resize', function () {
+//     initGsapScroll();
+// });
 

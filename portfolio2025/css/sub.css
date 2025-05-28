@@ -51,12 +51,17 @@
 .subPortBox .portList .portThumb img{ width:100%; height:100%; object-fit: cover; }
 .subPortBox .portList .portTxt{ position:relative; padding:20px; background:#fff; }
 .subPortBox .portList .portTxt ul{ padding:0; }
-.subPortBox .portList .portTxt ul .type{ display:inline-block; padding:5px 20px 7px; border-radius:50px; background:#239c83; margin-right:0.5rem; }
-.subPortBox .portList .portTxt ul .type span{ line-height: 1; color:#fff; }
-.subPortBox .portList .portTxt h3{ font-size:20px; color:#000; font-weight:700; padding:10px 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; word-break:break-word; }
-.subPortBox .portList .portTxt .portTxt02{ font-size:14px; color:#7C7C7C; text-overflow:ellipsis; overflow:hidden; font-weight:500; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-break:break-word }
+.subPortBox .portList .portTxt ul .type{ display:inline-block; padding:5px 20px 7px; border-radius:50px; background:#239c83; margin-right:0.5rem; line-height: 1; color:#fff; font-size:0.8rem; }
+.subPortBox .portList .portTxt h3{ font-size:1.5rem; color:#000; font-weight:700; padding:10px 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; word-break:break-word; }
+.subPortBox .portList .portTxt .portTxt02{ font-size:1rem; color:#b9b5b5; text-overflow:ellipsis; overflow:hidden; font-weight:500;word-break:break-word }
 .subPortBox .portList .portTxt .lst_btn{ margin-top:30px; }
 .subPortBox .portList .portTxt .lst_btn button{ display:inline-block; padding:5px 15px; border:1px solid #e0e0e0; color:#7C7C7C; margin-right:1rem; }
+.subPortBox .portList .portTxt .lst_btn button span{ font-size:0.88rem; }
+.subPortBox .portList.motion{ animation:slide_Up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)); transition:.1s }
+@keyframes slide_Up{
+    0%{transform:translateY(30px); opacity: 0;}
+    30%{transform:translateY(30px); opacity: 0;}
+}
 
 .portCont02, .portContTab_lst{ display:none; }
 .portCont02.active, .portContTab_lst.active{ display:block; }
@@ -68,22 +73,17 @@
 .portContTab_lst .portList .portTxt h3 a{ color:#000; }
 .portContTab_lst .portList .portTxt p{ width:30%; color:#7C7C7C; font-weight:500; text-align:center; font-style: italic; }
 .portContTab_lst .portList .portTxt .infoBtn{ width:10%; display:flex; gap:10px; justify-content:center; }
-.portContTab_lst .portList .portTxt .infoBtn a{ padding:5px 10px; background:#ffa500; color:#fff; font-size:0.88rem; }
+.portContTab_lst .portList .portTxt .infoBtn button{ padding:5px 10px; background:#ffa500; color:#fff; font-size:0.88rem; }
 
 /*  about - 소개 */
 .aboutFix{ display:flex; align-items:center; gap:40px; }
 .aboutTitle_L{ width:40%; padding-right:40px; }
 .aboutTitle_L h3{ color:#000;  font-size:40px; font-weight:700; line-height: 1.3; }
 .aboutTitle_L .aboutImg.motion h2{ animation:fadeIn_img .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)); transition:.1s }
-.subPortBox .portList.motion{ animation:slide_Up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)); transition:.1s }
 
 @keyframes fadeIn_img{
     0%{ opacity: 0;}
     30%{ opacity: 1;}
-}
-@keyframes slide_Up{
-    0%{transform:translateY(30px); opacity: 0;}
-    30%{transform:translateY(30px); opacity: 0;}
 }
 
 .aboutTitle_L .aboutImg img{ width:100%; height:100%; object-fit: contain; }
@@ -112,7 +112,7 @@
 .sclXTxt{ display:flex; flex-direction: column; }
 .sclXTxt .personlity{ display:flex; margin-left:10vw }
 .sclXTxt .personlity p{ display:flex; flex-direction: column; white-space:nowrap; margin-right:2vw;  }
-.sclXTxt .personlity p span{ font-size:10rem; color:#c9c9c9; text-transform: uppercase; }
+.sclXTxt .personlity p span{ font-size:10rem; color:#c9c9c9; text-transform: uppercase; font-weight:600 }
 .sclXTxt .personlity p .perEn{ font-size:3.6vw; color:#c9c9c9; }
 
 /* about - tool */
@@ -168,7 +168,7 @@
 .hobby .hobbyWrap{ width:1770px; height:100%; margin: auto; box-sizing:border-box; }
 .hobby .hobbyWrap h2{ position:absolute; color:#fff; font-size:20rem; text-align:center; font-weight:600; font-family:'Cormorant Infant', serif; top:50%; left:50%; transform:translate(-50%, -50%); }
 .hobby .hobbyWrap .hobbyCon { position:relative; /*margin-top:5rem;*/ height:100%; }
-.hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ position:absolute; width:500px; height:350px; top:20%; left:50%; background:#fff; padding:25px 25px 75px; border:1px solid #7C7C7C; transform:translate(-50%, -50%); }
+.hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ position:absolute; width:500px; height:30rem; top:20%; left:50%; background:#fff; padding:25px 25px 75px; border:1px solid #7C7C7C; transform:translate(-50%, -50%); }
 .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(1){ transform:translateX(-50%) rotate(5deg) }
 .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(2){ transform:translateX(-50%) rotate(-5deg) }
 .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard:nth-child(3){ transform:translateX(-50%) rotate(0deg) }
@@ -292,7 +292,7 @@
 .proJ_Cont .left li.active, .proJ_Cont .left li:hover { background:#f19c00; transition:.3s;transform:scaleX(1); transform-origin: bottom left; }
 .proJ_Cont .left li.active a, .proJ_Cont .left li:hover a{ color:#fff; font-weight:600 }
 .proJ_Cont .right{ position:relative; }
-.proJ_Cont .right .proJectImg { position: absolute; top:-6rem; left: 0;
+.proJ_Cont .right .proJectImg { position: absolute; width:35rem; top:-6rem; left: 0;
 opacity: 0; transition: opacity 0.5s; pointer-events: none; }
 .proJ_Cont .right .proJectImg.active { opacity: 1; pointer-events: auto; }
 .proJ_Cont .right .proJectImg img{ width:100%; }
@@ -362,6 +362,7 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .qna table .question td span{ font-size:1rem; font-weight:500 }
     .qna table .answer span{ font-size:0.9rem; }
 
+    .portFilter_wrap{ width:100%; padding:0 1rem; box-sizing: border-box; }
     
     .toolBox{ margin-top:5rem; }
     .toolBox .toolCard{ padding:1rem 2rem }
@@ -383,6 +384,10 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     /* carrer */
     .carrer .carrerWrap{ max-width:100%; }
  
+}
+
+@media(max-width:1440px){
+    .subTopSlide .subTitle .char{ font-size:6rem }
 }
 
 @media(max-width:1080px){
@@ -428,6 +433,9 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .aboutTitle_R .proflie .list .dl, .aboutTitle_R .proflie .list .dl_01{ width:auto; }
     .sclXTxt .personlity p span{ font-size:5rem; }
     
+
+    .toolBox .toolCard{ padding:1rem 1.5rem; }
+
     .hobby .hobbyWrap h2{ font-size:7rem; }
     .hobby .hobbyWrap .hobbyCon .hobbyImg .hobbyCard{ width:14rem; height:12rem; padding:1rem 1rem 2.5rem; top:40% }
     .hobby .hobbyWrap .hobbyCon .hobbyImg div{ margin-top:0; }
@@ -458,8 +466,17 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .portHead h2{ font-size:1.5rem }
     .portHead h2 span{ font-size:1rem; }
     .portHead p{ font-size:0.8rem; margin:1rem 0; }
+    .portTab{ flex-direction:column-reverse; align-items:flex-end }
+    .portFilter span{ display:none; }
     .portFilter_wrap{ width:100%; padding:0 0.88rem; box-sizing:border-box }
-    .portTab{ flex-direction: column; }
+    .portFilter_wrap .portFilter{ width:100%; overflow:hidden; flex-direction:column }
+    .portFilter_wrap .portFilter span{ width:20%; }
+    
+    .portFilter_wrap .port_switcher ul{ justify-content:flex-end }
+    .portTab .portFilter ul{ margin-top:0.5rem; flex-wrap:wrap; }
+    .portTab .portFilter ul li{ width:17%; text-align:center; }
+    .portTab .portFilter ul .filtertypes.active{ display:block; }
+    .portTab .portFilter ul .filtertypes.active:checked ~ .filtertypes{ display:block; }
     .portTab02 ul li{ margin:0 0.2rem; }
     .portTab02 ul li span{ padding:0.5rem 0.2rem; font-size:0.8rem; }
     .portTab02 ul li:after{ font-size:0.8rem; }
@@ -477,15 +494,24 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .subPortBox .portList .portTxt .lst_btn button span{ font-size:0.8rem }
     .subPortBox .portList .portTxt .lst_btn button + button{ margin-top:0.5rem }
 
+    .portContTab_lst .portList .portTxt{ flex-direction:column }
+    .portContTab_lst .portList .portTxt h3, .portContTab_lst .portList .portTxt p, .portContTab_lst .portList .portTxt .infoBtn{ width:100%; }
+    .portContTab_lst .portList .portTxt p{ text-align:left; }
+    .portContTab_lst .portList .portTxt .infoBtn button{ width:50%; text-align:center; }
+    
+    
     /* stroy */
-    .story_project{ height:auto; padding:3rem 0 5rem; }
+    .story_project{ height:auto; padding:3rem 1rem 5rem; }
     .story .storyWrap{ padding:0 1rem; }
     .storyBox .storyLst{ width:15rem; }
     .storyBox .storyLst:nth-child(odd){ margin-left:0; }
     .storyBox .storyLst:nth-child(even){ margin-left:auto; }
     .storyBox .storyLst h4{ font-size:1.25rem; margin:1rem 0; line-height:1.2; }
 
-    .proJ_Cont .right { overflow: hidden; position: relative; }
+    .proJ_Cont{ margin-top:2rem; }
+    .proJ_Cont > div{ width:100%; }
+    .proJ_Cont .right .proJectImg{ position:relative; width:100%; opacity:1 }
+    .proJ_Cont .right p{ color:#fff; padding-left:0.5rem; margin-top:0.5rem; }
     .proJ_Cont .slider { display: flex; transition: transform 0.5s ease-in-out; width: 300%; /* 슬라이드 개수 * 100% */ }
     .proJ_Cont .slide { width: 100%; flex: 0 0 100%; }    
     .proJ_Cont .slide img { width: 100%; display: block; }

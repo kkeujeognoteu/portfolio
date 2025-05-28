@@ -138,15 +138,16 @@ function initGsapScroll03(){
         })
         .to('.subPg', {backgroundColor:"#000", ease:'power2.in', duration:1},0)
         .to('.storyBox .storyLst p', {color:"#ededed", ease:'power2.in', duration:1},0)
+        
+        const swiperContainer = document.querySelector(".mySwiper");
+        if(swiperContainer){
+            new Swiper('.mySwiper', {
+                loop:true,
+                autoplay:false,
+                slidesPerView: 1,
+            })
+        }
 
-        const slider = document.querySelector('.proJ_Cont');
-        const totalSlides = document.querySelectorAll('.proJectImg').length;
-        let currentIndex = 0;
-    
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }, 3000); // 3초마다 슬라이드 전환
         /* carrer */
         let qna_Q = document.querySelectorAll('.carrerLst');
         let qna_A = document.querySelectorAll('.carrDropdown');
@@ -192,5 +193,7 @@ function initGsapScroll03(){
                 )
             })
         })
+        
     }
 }
+

@@ -272,7 +272,7 @@ function initGsapScroll02(){
                 toolCardhover.forEach((el) => el.classList.remove('active'))
             })
         })
-        toolCardhover[0].classList.add('active');
+        //toolCardhover[0].classList.add('active');
     
     
         /* hobby */

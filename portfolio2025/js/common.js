@@ -13,8 +13,8 @@ $(function(){Splitting();})
 
 /* menu */
 
-
-let header = document.querySelector('.header');
+let lastScrollTop = 0;
+let header = document.querySelector('header');
 let hambNav = document.querySelector('.hambNav');
 let body = document.body;
 hambNav.addEventListener('click', function(e){
@@ -38,4 +38,22 @@ window.addEventListener('scroll', function(){
         header.classList.add('scroll')
     }
     preScroll = headScrollY
+
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // 아래로 스크롤 → 헤더 숨기기
+        header.style.top = "-100px";
+    } else {
+        // 위로 스크롤 → 헤더 보이기
+        header.style.top = "0";
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // for Safari
 })
+
+
+
+window.addEventListener("scroll", function () {
+    
+});

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
 
@@ -164,10 +166,12 @@
                         <tr class="carrDropdown">
                             <td>
                                 <div>
-                                <p class="title">서울로 올라와 퍼블리셔 직무를 담당하였습니다. php 작업환경에서 KEA, 아토팜, 제로이드등 유지보수 퍼블리싱 작업을 하였으며, 남도사이버갤러리의 소장품샵을 admin페이지와 연동개발하고, 웹 접근성 품질 인증을 받았습니다. 또한, 회사 내부에서 직원들과 React.js를 배우며 자기계발 하였습니다.</p>
+                                <p class="title">골프 KPGA 홈페이지 시스템, 펜싱, 복싱, 축구 VAR 비디오판독 등 하는 홈페이지 유지보수 하는 업체 입니다. 유엔비즈에서 저의 업무는 퍼블리싱을 담당하였으며, 디자이너와 개발자들과 소통을하여 퍼블리싱을 하였습니다. 또한, 디자이너의 일을 덜어드리고자 디자이너와 개발자분들과 소통을 통하여 모바일 디자인을 기획부터 퍼블리싱 작업을 하였습니다.
+                                그 외의 골프 대회 준비를 하면서 라이노, unity와 surfer를 사용하여 등고선과 3D 모션을 렌더링 하였습니다.
+                                </p>
                                 <div class="carrTool">
                                     <p>주요기술 : HTML, CSS, JQUERY, react</p>
-                                    <p>사용톨 : PHOTOSHOP, 제플린, 고도몰, Edit Pluse, VPN, HeidiSQL</p>
+                                    <p>사용톨 : PHOTOSHOP, 제플린, Figma, 비주얼스튜디오, svn, HeidiSQL, html, css, unity, 라이노</p>
                                 </div>
                             </div>
                             </td>
@@ -238,35 +242,35 @@
                             </div>
                             <div class="right">
                                 <div class="proJectImg">
-                                    <img src="../images/unbiz_boxing.png">
+                                    <img src="../images/portfolio_2022.png">
                                 </div>
                                 <div class="proJectImg">
-                                    <img src="../images/illuster.png">
+                                    <img src="../images/portfolio_2023.png">
                                 </div>
                                 <div class="proJectImg">
-                                    <img src="../images/photoshop.png">
+                                    <img src="../images/portfolio_gagyebu.png">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mobile">
-                        <div class="proJ_Cont">
-                            <div class="right">
-                                <div class="proJectImg">
+                        <div class="swiper mySwiper proJ_Cont">
+                            <div class="swiper-wrapper right">
+                                <div class="swiper-slide proJectImg">
                                     <a href="https://kkeujeognote.co.kr/2021portfolio/index.html" target="_blank">
-                                        <img src="../images/future_thumb.jpg">
+                                        <img src="../images/portfolio_2022.png">
                                         <p>YuJin 포트폴리오 2022.ver</p>
                                     </a>
                                 </div>
-                                <div class="proJectImg">
+                                <div class="swiper-slide proJectImg">
                                     <a href="https://kkeujeognote.co.kr/main.html" target="_blank">
-                                        <img src="../images/gg_mockup.jpg">
-                                        <p>YuJin 포트폴리오 2024.ver</p>
+                                        <img src="../images/portfolio_2023.png">
+                                        <p>YuJin 포트폴리오 2023.ver</p>
                                     </a>
                                 </div>
-                                <div class="proJectImg">
+                                <div class="swiper-slide proJectImg">
                                     <a href="#!" onclick="javascript:alert('준비중입니다.')">
-                                        <img src="../images/ggudi_sub.jpg">
+                                        <img src="../images/portfolio_gagyebu.png">
                                         <p>YuJin 가계부 홈페이지</p>
                                     </a>
                                 </div>
@@ -290,13 +294,27 @@
             </div>
         </footer>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/scrolla.jquery.min.js"></script>
     <script src="../js/splitting.min.js"></script>
     <script src="../js/history.js"></script>
     <script src="../js/sub.js"></script>
     <script src="../js/common.js"></script>
+    
+    <!-- <script>
+       const swiper = new Swiper(".proJ_Cont", {
+            slidesPerView: 2,
+            spaceBetween: 10,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            autoplay: {
+                // 자동재생 여부
+                delay: 5000, // 시작시간 설정
+            },
+        });
+    </script> -->
 
 </body>
 </html>
