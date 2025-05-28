@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.wrap{ width:100%; box-sizing: border-box; min-width:1440px; }
+.wrap{ width:100%; box-sizing: border-box;}
 
 /*  */
 .character{ position:relative; height:100vh !important; }
@@ -69,7 +69,7 @@
 
 /* works */
 .works{ display:flex; justify-content: flex-end; background:#fff; height:100vh !important; }
-.works .inner{ width:90%; padding:60px 67px ; border-radius:50px 0 0 50px; display:flex; flex-direction: column; align-items:center; justify-content:center; }
+.works .inner{ width:100%; padding:60px 67px ; border-radius:50px 0 0 50px; display:flex; flex-direction: column; align-items:center; justify-content:center; }
 .works .inner > p{ font-size:25px; margin-top:10px; font-weight:500; color:#000; }
 .worksBox{ margin-top:60px; }
 .workWrap{ display:flex; gap:20px; }
@@ -209,7 +209,7 @@
 
     .works .inner{ width:100%; padding:0 1rem; }
     .works .inner > p{ font-size:0.8rem }
-    .worksBox{ margin-top:2rem }
+    .worksBox{ margin-top:2rem; margin-left:9rem }
     .workWrap{ gap:1rem; }
     .workWrap .workList{ width:40%; }
     .listTxt .date, .listTxt .company{ font-size:0.8rem }
@@ -226,7 +226,8 @@
     .portfolio .portBox > ul > li .port_hoverBox ul, .portfolio .portBox > ul > li .port_hoverBox .cardTxt{ display:none; }
     
     
-    .mainTask{ margin-top:0; margin-bottom:3rem; }
+    .mainTask{ margin-top:0; margin-bottom:3rem; padding:2rem 1rem 0; }
+    .mainTask .mainTaskWrap{ padding:0; }
     
     .mainTaskBox{ display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:2rem; border:none; border-radius:0; }
 
@@ -238,7 +239,7 @@
 @media(max-width:380px){
     .aboutMe .inner .about_R p br{ line-height:1; }
 
-    .portfolio .portBox ul li[class^=card-wedo]{ width:9rem; height:9rem; margin-top:3rem; margin-bottom:3rem; }
+    .portfolio .portBox ul li[class^=card-wedo]{ width:11rem; height:11rem; margin-top:3rem; margin-bottom:3rem; }
 
     .mainTaskBox{ grid-template-columns: 1fr; }
 }

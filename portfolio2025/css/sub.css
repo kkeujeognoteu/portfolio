@@ -387,7 +387,7 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
 }
 
 @media(max-width:1440px){
-    .subTopSlide .subTitle .char{ font-size:6rem }
+
 }
 
 @media(max-width:1080px){
@@ -431,7 +431,8 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .aboutTitle_R{ height:70vh; }
     .aboutTitle_R .proflie .portWrap{ gap:0.5rem; }
     .aboutTitle_R .proflie .list .dl, .aboutTitle_R .proflie .list .dl_01{ width:auto; }
-    .sclXTxt .personlity p span{ font-size:5rem; }
+    .sclXTxt .personlity{ margin-left:4rem; }
+    .sclXTxt .personlity p span{ font-size:4.5rem; }
     
 
     .toolBox .toolCard{ padding:1rem 1.5rem; }
@@ -473,8 +474,8 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .portFilter_wrap .portFilter span{ width:20%; }
     
     .portFilter_wrap .port_switcher ul{ justify-content:flex-end }
-    .portTab .portFilter ul{ margin-top:0.5rem; flex-wrap:wrap; }
-    .portTab .portFilter ul li{ width:17%; text-align:center; }
+    .portTab .portFilter ul{ margin-top:2rem; flex-wrap:wrap; }
+    .portTab .portFilter ul li{ width:4rem; text-align:center; }
     .portTab .portFilter ul .filtertypes.active{ display:block; }
     .portTab .portFilter ul .filtertypes.active:checked ~ .filtertypes{ display:block; }
     .portTab02 ul li{ margin:0 0.2rem; }
