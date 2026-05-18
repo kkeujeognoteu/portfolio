@@ -44,20 +44,45 @@
 .portContTab{ display:none; }
 .portContTab.active{ display:block; }
 
-.subPortBox{ display:grid; grid-template-columns:1fr 1fr; grid-column-gap:30px; grid-row-gap:30px; }
+.subPortBox{ display:grid; grid-template-columns:repeat(4, 1fr); grid-column-gap:30px; grid-row-gap:30px; }
 .subPortBox .portList{ width:100%; overflow:hidden; box-shadow: 0 0 7px 0 rgba(0, 0, 0, .1); transition: box-shadow .3s ease, transform .3s ease, -webkit-transform .3s ease; }
 .subPortBox .portList:hover{ transform: translate3d(0, -6px, 0) !important; box-shadow: 0 .8125rem 1rem rgba(35, 35, 35, .15) !important; }
-.subPortBox .portList .portThumb{ height:540px; border-bottom:1px solid #ededed; background:#fff; }
-.subPortBox .portList .portThumb img{ width:100%; height:100%; object-fit: cover; }
+.subPortBox .portList .portThumb{ 
+    height:250px; 
+    max-height:540px; 
+    border-bottom:1px solid #ededed; 
+    background:#fff; 
+    line-height:0;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.subPortBox .portList .portThumb img{ 
+    width:100%;
+    height:100%;
+    object-fit: contain;
+}
 .subPortBox .portList .portTxt{ position:relative; padding:20px; background:#fff; }
 .subPortBox .portList .portTxt ul{ padding:0; }
 .subPortBox .portList .portTxt ul .type{ display:inline-block; padding:5px 20px 7px; border-radius:50px; background:#239c83; margin-right:0.5rem; line-height: 1; color:#fff; font-size:0.8rem; }
 .subPortBox .portList .portTxt h3{ font-size:1.5rem; color:#000; font-weight:700; padding:10px 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; word-break:break-word; }
-.subPortBox .portList .portTxt .portTxt02{ font-size:1rem; color:#b9b5b5; text-overflow:ellipsis; overflow:hidden; font-weight:500;word-break:break-word }
-.subPortBox .portList .portTxt .lst_btn{ margin-top:30px; }
-.subPortBox .portList .portTxt .lst_btn button{ display:inline-block; padding:5px 15px; border:1px solid #e0e0e0; color:#7C7C7C; margin-right:1rem; }
+.subPortBox .portList .portTxt .portTxt02{ 
+    font-size:1rem;
+    height:72px;
+    color:#b9b5b5; 
+    font-weight:500;
+    white-space: normal;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    word-break:break-word;
+}
+.subPortBox .portList .portTxt .lst_btn{ margin-top:30px; display:flex; }
+.subPortBox .portList .portTxt .lst_btn button{ display:inline-block; padding:5px 10px; border:1px solid #e0e0e0; color:#7C7C7C; margin-right:1rem; }
 .subPortBox .portList .portTxt .lst_btn button span{ font-size:0.88rem; }
-.subPortBox .portList.motion{ animation:slide_Up .4s cubic-bezier(.5,0,.5,1)both; animation-delay:calc(100ms * var(--char-index)); transition:.1s }
+.subPortBox .portList.motion{  transform:translateY(15px); transition:transform .3s }
 @keyframes slide_Up{
     0%{transform:translateY(30px); opacity: 0;}
     30%{transform:translateY(30px); opacity: 0;}

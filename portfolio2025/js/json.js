@@ -7,9 +7,65 @@ const dataJson = {
         {cd : 'A05', nm : 'php개발'},
         {cd : 'A06', nm : '고도몰'},
         {cd : 'A07', nm : 'mobile'},
+        {cd : 'A08', nm : '클론코딩'},
+        {cd : 'A09', nm : '디자인'},
 
     ],
     works : [
+        {
+            company : "nexv",
+            filterType : ['A03', 'A08'],
+            title : '서울비디치과',
+            summary:'서울비디치과 프로젝트는 병원 사이트 서버 이전 작업을 위해 기존 웹사이트를 클론 코딩하여 퍼블리싱을 수행하였습니다.',
+            detail : '',
+            link : 'https://www.bdseoulbd.com/',
+            thumbImb:'seoulbd',
+        },
+        {
+            company : "nexv",
+            filterType : ['A03', 'A08'],
+            title : '팩트성형외과',
+            summary:'팩트성형외과 프로젝트는 병원 사이트 서버 이전 작업을 위해 기존 웹사이트를 클론 코딩하여 퍼블리싱을 수행하였습니다.',
+            detail : '',
+            link : 'https://www.factps.com/',
+            thumbImb:'factps',
+        },
+        {
+            company : "nexv",
+            filterType : ['A03', 'A08'],
+            title : '경희다복한의원',
+            summary:'경희다복한의원 프로젝트는 병원 사이트 서버 이전 작업을 위해 기존 웹사이트를 클론 코딩하여 퍼블리싱을 수행하였습니다.',
+            detail : '',
+            link : 'https://www.e-hani.co.kr/',
+            thumbImb:'ehani',
+        },
+        {
+            company : "nexv",
+            filterType : ['A03', 'A08'],
+            title : '경희동주한의원',
+            summary:'경희동주한의원 프로젝트는 병원 사이트 서버 이전 작업을 위해 기존 웹사이트를 클론 코딩하여 퍼블리싱을 수행하였습니다.',
+            detail : '',
+            link : 'http://www.khdj2020.com/',
+            thumbImb:'khdj',
+        },
+        {
+            company : "nexv",
+            filterType : ['A03', 'A08'],
+            title : '온아한의원',
+            summary:'온아한의원 프로젝트는 병원 사이트 서버 이전 작업을 위해 기존 웹사이트를 클론 코딩하여 퍼블리싱을 수행하였습니다.',
+            detail : '',
+            link : 'http://www.onahani.co.kr/',
+            thumbImb:'onahan',
+        },
+        {
+            company : "nexv",
+            filterType : ['A03', 'A09'],
+            title : '신세계치과',
+            summary:'신세계치과 프로젝트는 사용자 중심의 UI/UX를 고려하여 웹사이트 디자인 및 퍼블리싱 작업을 수행하였습니다.',
+            detail : '',
+            link : 'http://nexv.co.kr:9100/',
+            thumbImb:'newdt',
+        },
         {
             company : "unbiz",
             filterType : ['A01', 'A02'],
@@ -271,10 +327,16 @@ const dataJson = {
             desc: "모든 프로젝트를 확인하실 수 있습니다."
         },
         {
+            cd : 'nexv',
+            title: "(주)넥스브이",
+            period: "2025.11 - 2026.05",
+            desc: "6개월 계약직으로 근무하면서 병원 사이트 서버 이전 작업 진행 및 기존 클론 코딩 기반 퍼블리싱을 수행하였으며, <br> 디자인 및 퍼블리싱을 담당 하였습니다."
+        },
+        {
             cd : 'unbiz',
             title: "(주)유엔비즈",
             period: "2023.10 - 2025.03",
-            desc: "우리는 최첨단 스포츠 기술을 지향하는 회사로<br>ADMIN 및 KPGA 사이트 A02 위주의 작업을 하였습니다."
+            desc: "최첨단 스포츠 기술을 지향하는 회사로<br>ADMIN 및 KPGA 사이트 A02 위주의 작업을 하였습니다."
         },
         {
             cd : 'unipics',
