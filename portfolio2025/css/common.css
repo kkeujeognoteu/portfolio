@@ -83,16 +83,20 @@
     30%{transform:translateY(30px); opacity: 0;}
 }
 
+.header.scroll{
+    background:rgba(0,0,0,.3);  
+}
+
 
 /* 더보기 */
 .moreBtn{ margin-top:100px; }
-.moreBtn button{ position:relative; text-align:center; display:inline-block; background:#071017; color:#fff; padding:20px 0; width:250px; border-radius:50px; font-size:18px; font-weight:600; overflow:hidden; transition:all .2s linear 0s; }
-.moreBtn button:after{ content:''; position:absolute; width:20px; height:20px; background:url(../images/right-arrow.png)no-repeat; background-size:contain; font-size:15px; right:20px; top:50%; transform:translateY(-50%); opacity:0; transition:all .2s linear 0s; }
-.moreBtn button:hover{ text-indent:-20px; background:#FFBF0E }
-.moreBtn button:hover:after{ opacity: 1; }
-.moreBtn button .arrowRight{ position:absolute; width:40px; height:40px; right:30px; top:13px; background:#30404E; border-radius:100%; padding:8px; box-sizing:border-box }
-.moreBtn button .arrowRight img{ width:100%; }
-.moreBtn button .arrowRight:hover{ animation:moreBtn 1s linear; animation-iteration-count:infinite; }
+.moreBtn a{ position:relative; text-align:center; display:inline-block; background:#071017; color:#fff; padding:20px 0; width:250px; border-radius:50px; font-size:18px; font-weight:600; overflow:hidden; transition:all .2s linear 0s; }
+.moreBtn a:after{ content:''; position:absolute; width:20px; height:20px; background:url(../images/right-arrow.png)no-repeat; background-size:contain; font-size:15px; right:20px; top:50%; transform:translateY(-50%); opacity:0; transition:all .2s linear 0s; }
+.moreBtn a:hover{ text-indent:-20px; background:#FFBF0E }
+.moreBtn a:hover:after{ opacity: 1; }
+.moreBtn a .arrowRight{ position:absolute; width:40px; height:40px; right:30px; top:13px; background:#30404E; border-radius:100%; padding:8px; box-sizing:border-box }
+.moreBtn a .arrowRight img{ width:100%; }
+.moreBtn a .arrowRight:hover{ animation:moreBtn 1s linear; animation-iteration-count:infinite; }
 
 /* 서브페이지 */
 .subPg{ position:relative; }
@@ -127,6 +131,9 @@ footer .footerWrap  .contactBox{ border-top:1px solid #fff; border-bottom:1px so
 
 @media(max-width:1440px){
 
+    .header{
+        height: 80px;
+    }
     .header .inner{ padding:0 2rem }
     .header.fixed .navBox ul li a{ font-size:4rem; }
     /* sub page */
@@ -143,8 +150,8 @@ footer .footerWrap  .contactBox{ border-top:1px solid #fff; border-bottom:1px so
     /* header */
     .header .inner{ padding:1rem; }
     .header .logo a{ font-size:3rem; line-height:1; }
-    .header .hambNav{ right:2rem; top:0.8rem; }
-    .header .hambNav:hover{ width:4rem; height:4rem; }
+    .header .hambNav{ right:2rem; top:0.8rem; width:3.5rem; height: 3.5rem; }
+    .header .hambNav:hover{ width:3.5rem; height:3.5rem; }
     .header .hambNav .hamb{ width:2rem; height:0.35rem; right:1rem; top:2rem; }
     .header .hambNav .hamb:before{ top:-0.7rem; }
     .header .hambNav .hamb:after{ bottom:-0.7rem; }
@@ -188,7 +195,7 @@ footer .footerWrap  .contactBox{ border-top:1px solid #fff; border-bottom:1px so
     .contactBox p a{ font-size:1rem; }
 
     .moreBtn{ margin-top:3rem }
-    .moreBtn button{ font-size:0.8rem; width:12rem; padding:0.8rem 0; }
+    .moreBtn a{ font-size:0.8rem; width:12rem; padding:0.8rem 0; }
 
     .subTopSlide .subTitle .char{ font-size:2.5rem; }
 }
