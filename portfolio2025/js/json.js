@@ -63,7 +63,7 @@ const dataJson = {
             title : '신세계치과',
             summary:'신세계치과 프로젝트는 사용자 중심의 UI/UX를 고려하여 웹사이트 디자인 및 퍼블리싱 작업을 수행하였습니다.',
             detail : '',
-            link : 'http://nexv.co.kr:9100/',
+            link : '',
             thumbImb:'newdt',
         },
         {
