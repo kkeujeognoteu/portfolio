@@ -87,11 +87,11 @@
 .portfolio { position:relative; }
 .portfolio .portTitle{ width:100%; text-align:center; padding-top:20vh; box-sizing:border-box; }
 .portfolio .portTitle p{ font-size:11rem; line-height:0.9; color:#fff; }
-.portfolio .portTitle .portA{ font-family:'Public Sans', sans-serif }
-.portfolio .portTitle .portB{ font-family:'Cormorant Infant', serif }
-.portfolio .portC{ display:flex; z-index:2; margin-top:18%; text-align:center; transform:translateX(-50%); display:none; }
+.portfolio .portTitle .port_a{ font-family:'Public Sans', sans-serif }
+.portfolio .portTitle .port_b{ font-family:'Cormorant Infant', serif }
+/* .portfolio .port_c{ display:inline; z-index:2; margin-top:18%; text-align:center; transform:translateX(-50%); display:none; } */
 
-.portfolio .portBox{ width:1440px; margin:auto; }
+.portfolio .portBox{ width:1440px; margin:auto; position:relative; z-index: 0; }
 .portfolio .portBox > ul{ display:flex; flex-direction:column }
 .portfolio .portBox > ul > li[class^=card-wedo]{ position:relative; width:450px; height:450px; margin:10vh 0; border:1px solid #000; border-radius:100%; overflow:hidden; transition:all .5s ease-out; }
 .portfolio .portBox > ul > li[class^=card-wedo]:hover{ border-radius:20px; overflow:hidden; transition:all .5s; }

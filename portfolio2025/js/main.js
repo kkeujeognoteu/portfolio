@@ -87,10 +87,9 @@ function initGsapScrollMain(){
             }
         })
     
-        .fromTo('.portfolio .portTitle .portA',{x:'-100%'},{x:'0%', ease:'none', duration:5},0)
-        .fromTo('.portfolio .portTitle .portB',{x:'100%'},{x:'0%', ease:'none', duration:5},0)
-     
-        .fromTo('.portfolio .portC', {y:'-100%'},{x:'0%', ease:'none'},0)
+        .fromTo('.portfolio .portTitle .port_a',{x:'-100%'},{x:'0%', ease:'none', duration:5},0)
+        .fromTo('.portfolio .portTitle .port_b',{x:'100%'},{x:'0%', ease:'none', duration:5},0)     
+        .fromTo('.portfolio .port_c', {x:'100%'},{x:'0%', ease:'none', duration:5},0)
     
         gsap.timeline({
             scrollTrigger:{
@@ -105,7 +104,6 @@ function initGsapScrollMain(){
         .to('.contain',{backgroundColor:'#222222', color:'#000', ease:'none', duration:5},0)
         //title 글자 position:fixed 적용
         .to('.portfolio .portTitle',{position:'fixed', ease:'none', left:'0', top:'0', width: '100%', zIndex:'1'},0)
-        // .to('.portfolio .portC',{position:'fixed',left:'50%', bottom:'23%',zIndex:'2', ease:'none'},0)
         
         //list card 부드럽게 올라가기
         .fromTo('.portBox > ul',{margin:'0 auto'},{margin:'100vh auto 0', position:'relative', zIndex:'1'},0)
@@ -119,26 +117,9 @@ function initGsapScrollMain(){
             }
         })
         .to('.contain',{backgroundColor:'#000', color:'#fff', ease:'none', duration:5},0)
-        .to('.portfolio .portTitle .portA',{x:'-100%', zIndex:'-1', ease:'none', duration:5},0)
-        .to('.portfolio .portTitle .portB',{x:'100%', zIndex:'-1', ease: 'none', duration:5},0)
-        // .to('.portfolio .portC',{x:'100%',position:'fixed', width: '100%', zIndex:'1', ease:'none'},0)
-    
-        
-        /* main work js */
-        // const taskLists = document.querySelectorAll('.mainTaskList');
-    
-        // taskLists.forEach((item) => {
-        //     item.addEventListener('mouseenter', () => {
-        //         taskLists.forEach((el) => el.classList.remove('active')); // 모두 비활성화
-        //         item.classList.add('active'); // 현재 hovered 요소만 활성화
-        //     });
-    
-        //     item.addEventListener('mouseleave', () => {
-        //     // 마우스를 벗어나면 전체 비활성화하거나 초기화 원한다면 아래 사용
-        //     // taskLists.forEach((el) => el.classList.remove('active'));
-        //     });
-        //     taskLists[0].classList.add('active'); // 첫 번째 항목 활성화
-        // });
+        .to('.portfolio .portTitle .port_a',{x:'-100%', zIndex:'0', ease:'none', duration:5},0)
+        .to('.portfolio .portTitle .port_b',{x:'100%', zIndex:'0', ease: 'none', duration:5},0)
+        .to('.portfolio .port_c',{x:'100%', zIndex:'9', ease:'none', duration:5},0)
 
     }else if(window.innerWidth < 1080){
         /* character */
@@ -223,10 +204,10 @@ function initGsapScrollMain(){
             }
         })
     
-        .fromTo('.portfolio .portTitle .portA',{x:'-100%'},{x:'0%', ease:'none', duration:5},0)
-        .fromTo('.portfolio .portTitle .portB',{x:'100%'},{x:'0%', ease:'none', duration:5},0)
+        .fromTo('.portfolio .portTitle .port_a',{x:'-100%'},{x:'0%', ease:'none', duration:5},0)
+        .fromTo('.portfolio .portTitle .port_b',{x:'100%'},{x:'0%', ease:'none', duration:5},0)
      
-        .fromTo('.portfolio .portC', {y:'-100%'},{x:'0%', ease:'none'},0)
+        .fromTo('.portfolio .port_c', {x:'100%'},{x:'0%', ease:'none', duration:5},0)
     
         gsap.timeline({
             scrollTrigger:{
@@ -241,7 +222,6 @@ function initGsapScrollMain(){
         .to('.contain',{backgroundColor:'#222222', color:'#000', ease:'none', duration:5},0)
         //title 글자 position:fixed 적용
         .to('.portfolio .portTitle',{position:'fixed', ease:'none', left:'0', top:'0', width: '100%', zIndex:'1'},0)
-        .to('.portfolio .portC',{position:'fixed',left:'50%', bottom:'23%',zIndex:'2', ease:'none'},0)
         
         //list card 부드럽게 올라가기
         .fromTo('.portBox > ul',{margin:'0 auto'},{margin:'100vh auto 0', position:'relative', zIndex:'1'},0)
@@ -255,9 +235,9 @@ function initGsapScrollMain(){
             }
         })
         .to('.contain',{backgroundColor:'#000', color:'#fff', ease:'none', duration:5},0)
-        .to('.portfolio .portTitle .portA',{x:'-100%', zIndex:'-1', ease:'none', duration:5},0)
-        .to('.portfolio .portTitle .portB',{x:'100%', zIndex:'-1', ease: 'none', duration:5},0)
-        .to('.portfolio .portC',{x:'100%',position:'fixed', width: '100%', zIndex:'1', ease:'none'},0)
+        .to('.portfolio .portTitle .port_a',{x:'-100%', zIndex:'-1', ease:'none', duration:5},0)
+        .to('.portfolio .portTitle .port_b',{x:'100%', zIndex:'-1', ease: 'none', duration:5},0)
+        .to('.portfolio .port_c',{x:'100%', zIndex:'9', ease:'none', duration:5},0)
     }else if(window.innerWidth < 780){
         const frameCount = 15;
                 offsetValue = 50;
