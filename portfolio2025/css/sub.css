@@ -507,7 +507,11 @@ opacity: 0; transition: opacity 0.5s; pointer-events: none; }
     .portTab02 ul li span{ padding:0.5rem 0.2rem; font-size:0.8rem; }
     .portTab02 ul li:after{ font-size:0.8rem; }
     .tabGrid{ margin-top:1rem; }
-    .subPortBox{ grid-column-gap:1rem; grid-row-gap:1rem }
+    .subPortBox{
+        grid-template-columns: repeat(2, 1fr); 
+        grid-column-gap:1rem; 
+        grid-row-gap:1rem 
+    }
     .subPortBox .portList .portThumb{ height:10rem; }
     .subPortBox .portList .portTxt{ padding:1rem; }
     .subPortBox .portList .portTxt h3{ font-size:1rem; white-space: normal; }
